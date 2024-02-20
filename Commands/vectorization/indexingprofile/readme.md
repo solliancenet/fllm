@@ -4,9 +4,6 @@ indexingprofile
 
 ## Commands
 
-- [checkname](/Commands/vectorization/indexingprofile/_checkname.md)
-: checkname
-
 - [delete](/Commands/vectorization/indexingprofile/_delete.md)
 : delete
 

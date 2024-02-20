@@ -4,9 +4,6 @@ contentsourceprofile
 
 ## Commands
 
-- [checkname](/Commands/vectorization/contentsourceprofile/_checkname.md)
-: checkname
-
 - [delete](/Commands/vectorization/contentsourceprofile/_delete.md)
 : delete
 

@@ -24,23 +24,24 @@
               <json var="$Instance">
                 <schema type="array<object>">
                   <item type="object">
-                    <prop type="object" name="ConfigurationReferences">
+                    <prop type="object" name="configuration_references">
                       <additionalProp>
                         <item type="string"/>
                       </additionalProp>
                     </prop>
-                    <prop type="string" name="Indexer">
+                    <prop type="string" name="indexer">
                       <enum>
                         <item value="&quot;AzureAISearchIndexer&quot;"/>
                       </enum>
                     </prop>
-                    <prop type="string" name="Name"/>
-                    <prop type="string" name="ObjectId"/>
-                    <prop type="object" name="Settings">
+                    <prop type="string" name="name"/>
+                    <prop type="string" name="object_id"/>
+                    <prop type="object" name="settings">
                       <additionalProp>
                         <item type="string"/>
                       </additionalProp>
                     </prop>
+                    <prop type="string" name="type"/>
                   </item>
                 </schema>
               </json>

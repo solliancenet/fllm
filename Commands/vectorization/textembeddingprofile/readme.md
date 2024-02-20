@@ -4,9 +4,6 @@ textembeddingprofile
 
 ## Commands
 
-- [checkname](/Commands/vectorization/textembeddingprofile/_checkname.md)
-: checkname
-
 - [delete](/Commands/vectorization/textembeddingprofile/_delete.md)
 : delete
 

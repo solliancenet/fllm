@@ -33,14 +33,13 @@
                       </prop>
                     </prop>
                     <prop type="string" name="description"/>
-                    <prop type="string" name="embedding_profile"/>
                     <prop type="object" name="gatekeeper">
                       <prop type="array<string>" name="options">
                         <item type="string"/>
                       </prop>
                       <prop type="boolean" name="use_system_setting"/>
                     </prop>
-                    <prop type="string" name="indexing_profile"/>
+                    <prop type="string" name="indexing_profile_object_id"/>
                     <prop type="object" name="language_model">
                       <prop type="string" name="api_endpoint"/>
                       <prop type="string" name="api_key"/>
@@ -55,8 +54,10 @@
                     <prop type="string" name="name"/>
                     <prop type="string" name="object_id"/>
                     <prop type="string" name="orchestrator"/>
-                    <prop type="string" name="prompt"/>
+                    <prop type="string" name="prompt_object_id"/>
                     <prop type="boolean" name="sessions_enabled"/>
+                    <prop type="string" name="text_embedding_profile_object_id"/>
+                    <prop type="string" name="text_partitioning_profile_object_id"/>
                     <prop type="string" name="type"/>
                   </item>
                 </schema>
@@ -120,7 +121,6 @@
             </arg>
           </arg>
           <arg type="string" var="$body.description" options="description"/>
-          <arg type="string" var="$body.embedding_profile" options="embedding-profile"/>
           <arg type="object" var="$body.gatekeeper" options="gatekeeper">
             <help short="Gatekeeper"/>
             <arg type="array<string>" var="$body.gatekeeper.options" options="options">
@@ -129,7 +129,7 @@
             </arg>
             <arg type="boolean" var="$body.gatekeeper.use_system_setting" options="use-system-setting"/>
           </arg>
-          <arg type="string" var="$body.indexing_profile" options="indexing-profile"/>
+          <arg type="string" var="$body.indexing_profile_object_id" options="indexing-profile-object-id"/>
           <arg type="object" var="$body.language_model" options="language-model">
             <help short="LanguageModel"/>
             <arg type="string" var="$body.language_model.api_endpoint" options="api-endpoint"/>
@@ -147,8 +147,10 @@
           <arg type="string" var="$body.name" options="name"/>
           <arg type="string" var="$body.object_id" options="object-id"/>
           <arg type="string" var="$body.orchestrator" options="orchestrator"/>
-          <arg type="string" var="$body.prompt" options="prompt"/>
+          <arg type="string" var="$body.prompt_object_id" options="prompt-object-id"/>
           <arg type="boolean" var="$body.sessions_enabled" options="sessions-enabled"/>
+          <arg type="string" var="$body.text_embedding_profile_object_id" options="text-embedding-profile-object-id"/>
+          <arg type="string" var="$body.text_partitioning_profile_object_id" options="text-partitioning-profile-object-id"/>
           <arg type="string" var="$body.type" options="type"/>
         </arg>
       </argGroup>
@@ -174,14 +176,13 @@
                     </prop>
                   </prop>
                   <prop type="string" name="description" arg="$body.description"/>
-                  <prop type="string" name="embedding_profile" arg="$body.embedding_profile"/>
                   <prop type="object" name="gatekeeper" arg="$body.gatekeeper">
                     <prop type="array<string>" name="options" arg="$body.gatekeeper.options">
                       <item type="string"/>
                     </prop>
                     <prop type="boolean" name="use_system_setting" arg="$body.gatekeeper.use_system_setting"/>
                   </prop>
-                  <prop type="string" name="indexing_profile" arg="$body.indexing_profile"/>
+                  <prop type="string" name="indexing_profile_object_id" arg="$body.indexing_profile_object_id"/>
                   <prop type="object" name="language_model" arg="$body.language_model">
                     <prop type="string" name="api_endpoint" arg="$body.language_model.api_endpoint"/>
                     <prop type="string" name="api_key" arg="$body.language_model.api_key"/>
@@ -196,8 +197,10 @@
                   <prop type="string" name="name" arg="$body.name"/>
                   <prop type="string" name="object_id" arg="$body.object_id"/>
                   <prop type="string" name="orchestrator" arg="$body.orchestrator"/>
-                  <prop type="string" name="prompt" arg="$body.prompt"/>
+                  <prop type="string" name="prompt_object_id" arg="$body.prompt_object_id"/>
                   <prop type="boolean" name="sessions_enabled" arg="$body.sessions_enabled"/>
+                  <prop type="string" name="text_embedding_profile_object_id" arg="$body.text_embedding_profile_object_id"/>
+                  <prop type="string" name="text_partitioning_profile_object_id" arg="$body.text_partitioning_profile_object_id"/>
                   <prop type="string" name="type" arg="$body.type"/>
                 </schema>
               </json>

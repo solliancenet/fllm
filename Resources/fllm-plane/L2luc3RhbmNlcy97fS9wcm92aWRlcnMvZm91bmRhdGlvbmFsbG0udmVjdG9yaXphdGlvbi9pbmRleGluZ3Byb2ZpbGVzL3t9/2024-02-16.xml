@@ -26,23 +26,24 @@
               <json var="$Instance">
                 <schema type="array<object>">
                   <item type="object">
-                    <prop type="object" name="ConfigurationReferences">
+                    <prop type="object" name="configuration_references">
                       <additionalProp>
                         <item type="string"/>
                       </additionalProp>
                     </prop>
-                    <prop type="string" name="Indexer">
+                    <prop type="string" name="indexer">
                       <enum>
                         <item value="&quot;AzureAISearchIndexer&quot;"/>
                       </enum>
                     </prop>
-                    <prop type="string" name="Name"/>
-                    <prop type="string" name="ObjectId"/>
-                    <prop type="object" name="Settings">
+                    <prop type="string" name="name"/>
+                    <prop type="string" name="object_id"/>
+                    <prop type="object" name="settings">
                       <additionalProp>
                         <item type="string"/>
                       </additionalProp>
                     </prop>
+                    <prop type="string" name="type"/>
                   </item>
                 </schema>
               </json>
@@ -97,24 +98,25 @@
         <arg type="object" var="$body" options="body">
           <blank value="{}"/>
           <help short="IndexingProfile"/>
-          <arg type="object" var="$body.ConfigurationReferences" options="configuration-references">
+          <arg type="object" var="$body.configuration_references" options="configuration-references">
             <additionalProp>
               <item type="string"/>
             </additionalProp>
           </arg>
-          <arg type="string" var="$body.Indexer" options="indexer">
+          <arg type="string" var="$body.indexer" options="indexer">
             <help short="IndexerType"/>
             <enum>
               <item name="AzureAISearchIndexer" value="&quot;AzureAISearchIndexer&quot;"/>
             </enum>
           </arg>
-          <arg type="string" var="$body.Name" options="name"/>
-          <arg type="string" var="$body.ObjectId" options="object-id"/>
-          <arg type="object" var="$body.Settings" options="settings">
+          <arg type="string" var="$body.name" options="name"/>
+          <arg type="string" var="$body.object_id" options="object-id"/>
+          <arg type="object" var="$body.settings" options="settings">
             <additionalProp>
               <item type="string"/>
             </additionalProp>
           </arg>
+          <arg type="string" var="$body.type" options="type"/>
         </arg>
       </argGroup>
       <operation operationId="indexingprofiles_Upsert">
@@ -132,23 +134,24 @@
             <body>
               <json>
                 <schema type="object" name="body" arg="$body" clientFlatten="True">
-                  <prop type="object" name="ConfigurationReferences" arg="$body.ConfigurationReferences">
+                  <prop type="object" name="configuration_references" arg="$body.configuration_references">
                     <additionalProp>
                       <item type="string"/>
                     </additionalProp>
                   </prop>
-                  <prop type="string" name="Indexer" arg="$body.Indexer">
+                  <prop type="string" name="indexer" arg="$body.indexer">
                     <enum>
                       <item value="&quot;AzureAISearchIndexer&quot;"/>
                     </enum>
                   </prop>
-                  <prop type="string" name="Name" arg="$body.Name"/>
-                  <prop type="string" name="ObjectId" arg="$body.ObjectId"/>
-                  <prop type="object" name="Settings" arg="$body.Settings">
+                  <prop type="string" name="name" arg="$body.name"/>
+                  <prop type="string" name="object_id" arg="$body.object_id"/>
+                  <prop type="object" name="settings" arg="$body.settings">
                     <additionalProp>
                       <item type="string"/>
                     </additionalProp>
                   </prop>
+                  <prop type="string" name="type" arg="$body.type"/>
                 </schema>
               </json>
             </body>

@@ -4,9 +4,6 @@ Modifies system prompts.
 
 ## Commands
 
-- [checkname](/Commands/prompt/_checkname.md)
-: Checks for existing prompt name.
-
 - [delete](/Commands/prompt/_delete.md)
 : Deletes a prompt.
 

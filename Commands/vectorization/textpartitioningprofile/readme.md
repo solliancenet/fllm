@@ -4,9 +4,6 @@ textpartitioningprofile
 
 ## Commands
 
-- [checkname](/Commands/vectorization/textpartitioningprofile/_checkname.md)
-: checkname
-
 - [delete](/Commands/vectorization/textpartitioningprofile/_delete.md)
 : delete
 

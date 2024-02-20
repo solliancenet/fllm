@@ -4,9 +4,6 @@ Modifies system agents.
 
 ## Commands
 
-- [checkname](/Commands/agent/_checkname.md)
-: Checks for existing agent name.
-
 - [delete](/Commands/agent/_delete.md)
 : Deletes a agent.
 

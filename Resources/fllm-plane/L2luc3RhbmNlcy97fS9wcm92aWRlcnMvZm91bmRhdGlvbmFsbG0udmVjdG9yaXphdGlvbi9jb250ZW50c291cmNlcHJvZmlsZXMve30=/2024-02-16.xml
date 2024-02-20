@@ -31,6 +31,13 @@
                         <item type="string"/>
                       </additionalProp>
                     </prop>
+                    <prop type="integer32" name="contentSource">
+                      <enum>
+                        <item value="0"/>
+                        <item value="1"/>
+                        <item value="2"/>
+                      </enum>
+                    </prop>
                     <prop type="string" name="name"/>
                     <prop type="string" name="objectId"/>
                     <prop type="object" name="settings">
@@ -38,13 +45,7 @@
                         <item type="string"/>
                       </additionalProp>
                     </prop>
-                    <prop type="integer32" name="type">
-                      <enum>
-                        <item value="0"/>
-                        <item value="1"/>
-                        <item value="2"/>
-                      </enum>
-                    </prop>
+                    <prop type="string" name="type"/>
                   </item>
                 </schema>
               </json>
@@ -104,6 +105,13 @@
               <item type="string"/>
             </additionalProp>
           </arg>
+          <arg type="integer32" var="$body.contentSource" options="content-source">
+            <enum>
+              <item name="0" value="0"/>
+              <item name="1" value="1"/>
+              <item name="2" value="2"/>
+            </enum>
+          </arg>
           <arg type="string" var="$body.name" options="name"/>
           <arg type="string" var="$body.objectId" options="object-id"/>
           <arg type="object" var="$body.settings" options="settings">
@@ -111,13 +119,7 @@
               <item type="string"/>
             </additionalProp>
           </arg>
-          <arg type="integer32" var="$body.type" options="type">
-            <enum>
-              <item name="0" value="0"/>
-              <item name="1" value="1"/>
-              <item name="2" value="2"/>
-            </enum>
-          </arg>
+          <arg type="string" var="$body.type" options="type"/>
         </arg>
       </argGroup>
       <operation operationId="contentsourceprofiles_Upsert">
@@ -140,6 +142,13 @@
                       <item type="string"/>
                     </additionalProp>
                   </prop>
+                  <prop type="integer32" name="contentSource" arg="$body.contentSource">
+                    <enum>
+                      <item value="0"/>
+                      <item value="1"/>
+                      <item value="2"/>
+                    </enum>
+                  </prop>
                   <prop type="string" name="name" arg="$body.name"/>
                   <prop type="string" name="objectId" arg="$body.objectId"/>
                   <prop type="object" name="settings" arg="$body.settings">
@@ -147,13 +156,7 @@
                       <item type="string"/>
                     </additionalProp>
                   </prop>
-                  <prop type="integer32" name="type" arg="$body.type">
-                    <enum>
-                      <item value="0"/>
-                      <item value="1"/>
-                      <item value="2"/>
-                    </enum>
-                  </prop>
+                  <prop type="string" name="type" arg="$body.type"/>
                 </schema>
               </json>
             </body>
