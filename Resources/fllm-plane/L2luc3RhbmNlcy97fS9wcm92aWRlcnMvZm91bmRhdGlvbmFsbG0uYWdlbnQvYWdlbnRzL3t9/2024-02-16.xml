@@ -1,0 +1,227 @@
+<?xml version='1.0' encoding='utf-8'?>
+<CodeGen plane="fllm-plane">
+  <resource id="/instances/{}/providers/foundationallm.agent/agents/{}" version="2024-02-16" swagger="fllm-plane/fllm/ResourceProviders/FoundationaLLM.Agent/Paths/L2luc3RhbmNlcy97aW5zdGFuY2VJZH0vcHJvdmlkZXJzL0ZvdW5kYXRpb25hTExNLkFnZW50L2FnZW50cy97bmFtZX0=/V/MjAyNC0wMi0xNg=="/>
+  <commandGroup name="agent">
+    <command name="show" version="2024-02-16" confirmation="">
+      <resource id="/instances/{}/providers/foundationallm.agent/agents/{}" version="2024-02-16" swagger="fllm-plane/fllm/ResourceProviders/FoundationaLLM.Agent/Paths/L2luc3RhbmNlcy97aW5zdGFuY2VJZH0vcHJvdmlkZXJzL0ZvdW5kYXRpb25hTExNLkFnZW50L2FnZW50cy97bmFtZX0=/V/MjAyNC0wMi0xNg=="/>
+      <argGroup name="">
+        <arg type="string" var="$Path.instanceId" options="instance-id" required="True"/>
+        <arg type="string" var="$Path.name" options="name" required="True"/>
+      </argGroup>
+      <operation operationId="agents_Get">
+        <http path="/instances/{instanceId}/providers/FoundationaLLM.Agent/agents/{name}">
+          <request method="get">
+            <path>
+              <param type="string" name="instanceId" arg="$Path.instanceId" required="True"/>
+              <param type="string" name="name" arg="$Path.name" required="True"/>
+            </path>
+            <query>
+              <const readOnly="True" const="True" type="string" name="api-version">
+                <default value="&quot;2024-02-16&quot;"/>
+              </const>
+            </query>
+          </request>
+          <response statusCode="200">
+            <body>
+              <json var="$Instance">
+                <schema type="array<object>">
+                  <item type="object">
+                    <prop type="object" name="conversation_history">
+                      <prop type="boolean" name="enabled"/>
+                      <prop type="integer" name="max_history">
+                        <default value="0"/>
+                      </prop>
+                    </prop>
+                    <prop type="string" name="description"/>
+                    <prop type="string" name="embedding_profile"/>
+                    <prop type="object" name="gatekeeper">
+                      <prop type="array<string>" name="options">
+                        <item type="string"/>
+                      </prop>
+                      <prop type="boolean" name="use_system_setting"/>
+                    </prop>
+                    <prop type="string" name="indexing_profile"/>
+                    <prop type="object" name="language_model">
+                      <prop type="string" name="api_endpoint"/>
+                      <prop type="string" name="api_key"/>
+                      <prop type="string" name="api_version"/>
+                      <prop type="string" name="deployment"/>
+                      <prop type="string" name="provider"/>
+                      <prop type="float" name="temperature"/>
+                      <prop type="string" name="type"/>
+                      <prop type="boolean" name="use_chat"/>
+                      <prop type="string" name="version"/>
+                    </prop>
+                    <prop type="string" name="name"/>
+                    <prop type="string" name="object_id"/>
+                    <prop type="string" name="orchestrator"/>
+                    <prop type="string" name="prompt"/>
+                    <prop type="boolean" name="sessions_enabled"/>
+                    <prop type="string" name="type"/>
+                  </item>
+                </schema>
+              </json>
+            </body>
+          </response>
+          <response isError="True">
+            <body>
+              <json>
+                <schema type="@MgmtErrorFormat"/>
+              </json>
+            </body>
+          </response>
+        </http>
+      </operation>
+      <output type="array" ref="$Instance" clientFlatten="True"/>
+    </command>
+    <command name="delete" version="2024-02-16" confirmation="Are you sure you want to perform this operation?">
+      <resource id="/instances/{}/providers/foundationallm.agent/agents/{}" version="2024-02-16" swagger="fllm-plane/fllm/ResourceProviders/FoundationaLLM.Agent/Paths/L2luc3RhbmNlcy97aW5zdGFuY2VJZH0vcHJvdmlkZXJzL0ZvdW5kYXRpb25hTExNLkFnZW50L2FnZW50cy97bmFtZX0=/V/MjAyNC0wMi0xNg=="/>
+      <argGroup name="">
+        <arg type="string" var="$Path.instanceId" options="instance-id" required="True"/>
+        <arg type="string" var="$Path.name" options="name" required="True"/>
+      </argGroup>
+      <operation operationId="agents_Delete">
+        <http path="/instances/{instanceId}/providers/FoundationaLLM.Agent/agents/{name}">
+          <request method="delete">
+            <path>
+              <param type="string" name="instanceId" arg="$Path.instanceId" required="True"/>
+              <param type="string" name="name" arg="$Path.name" required="True"/>
+            </path>
+            <query>
+              <const readOnly="True" const="True" type="string" name="api-version">
+                <default value="&quot;2024-02-16&quot;"/>
+              </const>
+            </query>
+          </request>
+          <response statusCode="200"/>
+          <response isError="True">
+            <body>
+              <json>
+                <schema type="@MgmtErrorFormat"/>
+              </json>
+            </body>
+          </response>
+        </http>
+      </operation>
+    </command>
+    <command name="upsert" version="2024-02-16" confirmation="">
+      <resource id="/instances/{}/providers/foundationallm.agent/agents/{}" version="2024-02-16" swagger="fllm-plane/fllm/ResourceProviders/FoundationaLLM.Agent/Paths/L2luc3RhbmNlcy97aW5zdGFuY2VJZH0vcHJvdmlkZXJzL0ZvdW5kYXRpb25hTExNLkFnZW50L2FnZW50cy97bmFtZX0=/V/MjAyNC0wMi0xNg=="/>
+      <argGroup name="">
+        <arg type="string" var="$Path.instanceId" options="instance-id" required="True"/>
+        <arg type="string" var="$Path.name" options="name" required="True"/>
+        <arg type="object" var="$body" options="body">
+          <blank value="{}"/>
+          <help short="KnowledgeManagementAgent"/>
+          <arg type="object" var="$body.conversation_history" options="conversation-history">
+            <help short="ConversationHistory"/>
+            <arg type="boolean" var="$body.conversation_history.enabled" options="enabled"/>
+            <arg type="integer" var="$body.conversation_history.max_history" options="max-history">
+              <default value="0"/>
+            </arg>
+          </arg>
+          <arg type="string" var="$body.description" options="description"/>
+          <arg type="string" var="$body.embedding_profile" options="embedding-profile"/>
+          <arg type="object" var="$body.gatekeeper" options="gatekeeper">
+            <help short="Gatekeeper"/>
+            <arg type="array<string>" var="$body.gatekeeper.options" options="options">
+              <blank value="{}"/>
+              <item type="string"/>
+            </arg>
+            <arg type="boolean" var="$body.gatekeeper.use_system_setting" options="use-system-setting"/>
+          </arg>
+          <arg type="string" var="$body.indexing_profile" options="indexing-profile"/>
+          <arg type="object" var="$body.language_model" options="language-model">
+            <help short="LanguageModel"/>
+            <arg type="string" var="$body.language_model.api_endpoint" options="api-endpoint"/>
+            <arg type="string" var="$body.language_model.api_key" options="api-key"/>
+            <arg type="string" var="$body.language_model.api_version" options="api-version"/>
+            <arg type="string" var="$body.language_model.deployment" options="deployment"/>
+            <arg type="string" var="$body.language_model.provider" options="provider"/>
+            <arg type="float" var="$body.language_model.temperature" options="temperature">
+              <blank value="{}"/>
+            </arg>
+            <arg type="string" var="$body.language_model.type" options="type"/>
+            <arg type="boolean" var="$body.language_model.use_chat" options="use-chat"/>
+            <arg type="string" var="$body.language_model.version" options="version"/>
+          </arg>
+          <arg type="string" var="$body.name" options="name"/>
+          <arg type="string" var="$body.object_id" options="object-id"/>
+          <arg type="string" var="$body.orchestrator" options="orchestrator"/>
+          <arg type="string" var="$body.prompt" options="prompt"/>
+          <arg type="boolean" var="$body.sessions_enabled" options="sessions-enabled"/>
+          <arg type="string" var="$body.type" options="type"/>
+        </arg>
+      </argGroup>
+      <operation operationId="agents_Upsert">
+        <http path="/instances/{instanceId}/providers/FoundationaLLM.Agent/agents/{name}">
+          <request method="post">
+            <path>
+              <param type="string" name="instanceId" arg="$Path.instanceId" required="True"/>
+              <param type="string" name="name" arg="$Path.name" required="True"/>
+            </path>
+            <query>
+              <const readOnly="True" const="True" type="string" name="api-version">
+                <default value="&quot;2024-02-16&quot;"/>
+              </const>
+            </query>
+            <body>
+              <json>
+                <schema type="object" name="body" arg="$body" clientFlatten="True">
+                  <prop type="object" name="conversation_history" arg="$body.conversation_history">
+                    <prop type="boolean" name="enabled" arg="$body.conversation_history.enabled"/>
+                    <prop type="integer" name="max_history" arg="$body.conversation_history.max_history">
+                      <default value="0"/>
+                    </prop>
+                  </prop>
+                  <prop type="string" name="description" arg="$body.description"/>
+                  <prop type="string" name="embedding_profile" arg="$body.embedding_profile"/>
+                  <prop type="object" name="gatekeeper" arg="$body.gatekeeper">
+                    <prop type="array<string>" name="options" arg="$body.gatekeeper.options">
+                      <item type="string"/>
+                    </prop>
+                    <prop type="boolean" name="use_system_setting" arg="$body.gatekeeper.use_system_setting"/>
+                  </prop>
+                  <prop type="string" name="indexing_profile" arg="$body.indexing_profile"/>
+                  <prop type="object" name="language_model" arg="$body.language_model">
+                    <prop type="string" name="api_endpoint" arg="$body.language_model.api_endpoint"/>
+                    <prop type="string" name="api_key" arg="$body.language_model.api_key"/>
+                    <prop type="string" name="api_version" arg="$body.language_model.api_version"/>
+                    <prop type="string" name="deployment" arg="$body.language_model.deployment"/>
+                    <prop type="string" name="provider" arg="$body.language_model.provider"/>
+                    <prop type="float" name="temperature" arg="$body.language_model.temperature"/>
+                    <prop type="string" name="type" arg="$body.language_model.type"/>
+                    <prop type="boolean" name="use_chat" arg="$body.language_model.use_chat"/>
+                    <prop type="string" name="version" arg="$body.language_model.version"/>
+                  </prop>
+                  <prop type="string" name="name" arg="$body.name"/>
+                  <prop type="string" name="object_id" arg="$body.object_id"/>
+                  <prop type="string" name="orchestrator" arg="$body.orchestrator"/>
+                  <prop type="string" name="prompt" arg="$body.prompt"/>
+                  <prop type="boolean" name="sessions_enabled" arg="$body.sessions_enabled"/>
+                  <prop type="string" name="type" arg="$body.type"/>
+                </schema>
+              </json>
+            </body>
+          </request>
+          <response statusCode="200">
+            <body>
+              <json var="$Instance">
+                <schema type="object">
+                  <prop type="string" name="ObjectId"/>
+                </schema>
+              </json>
+            </body>
+          </response>
+          <response isError="True">
+            <body>
+              <json>
+                <schema type="@MgmtErrorFormat"/>
+              </json>
+            </body>
+          </response>
+        </http>
+      </operation>
+      <output type="object" ref="$Instance" clientFlatten="True"/>
+    </command>
+  </commandGroup>
+</CodeGen>

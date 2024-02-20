@@ -1,0 +1,132 @@
+<?xml version='1.0' encoding='utf-8'?>
+<CodeGen plane="fllm-plane">
+  <resource id="/instances/{}/providersx/foundationallm.configuration/configurations/branding" version="2024-02-16" swagger="fllm-plane/fllm/ResourceProviders/FoundationaLLM.Agent/Paths/L2luc3RhbmNlcy97aW5zdGFuY2VJZH0vcHJvdmlkZXJzWC9Gb3VuZGF0aW9uYUxMTS5Db25maWd1cmF0aW9uL2NvbmZpZ3VyYXRpb25zL2JyYW5kaW5n/V/MjAyNC0wMi0xNg=="/>
+  <commandGroup name="configuration configuration branding">
+    <command name="show" version="2024-02-16">
+      <resource id="/instances/{}/providersx/foundationallm.configuration/configurations/branding" version="2024-02-16" swagger="fllm-plane/fllm/ResourceProviders/FoundationaLLM.Agent/Paths/L2luc3RhbmNlcy97aW5zdGFuY2VJZH0vcHJvdmlkZXJzWC9Gb3VuZGF0aW9uYUxMTS5Db25maWd1cmF0aW9uL2NvbmZpZ3VyYXRpb25zL2JyYW5kaW5n/V/MjAyNC0wMi0xNg=="/>
+      <argGroup name="">
+        <arg type="string" var="$Path.instanceId" options="instance-id" required="True"/>
+      </argGroup>
+      <operation operationId="GetBrandingConfigurations">
+        <http path="/instances/{instanceId}/providersX/FoundationaLLM.Configuration/configurations/branding">
+          <request method="get">
+            <path>
+              <param type="string" name="instanceId" arg="$Path.instanceId" required="True"/>
+            </path>
+            <query>
+              <const readOnly="True" const="True" type="string" name="api-version">
+                <default value="&quot;2024-02-16&quot;"/>
+              </const>
+            </query>
+          </request>
+          <response statusCode="200">
+            <body>
+              <json var="$Instance">
+                <schema type="object">
+                  <prop type="string" name="accentColor"/>
+                  <prop type="string" name="accentTextColor"/>
+                  <prop type="string" name="allowAgentSelection"/>
+                  <prop type="string" name="backgroundColor"/>
+                  <prop type="string" name="companyName"/>
+                  <prop type="string" name="favIconUrl"/>
+                  <prop type="boolean" name="kioskMode"/>
+                  <prop type="string" name="logoText"/>
+                  <prop type="string" name="logoUrl"/>
+                  <prop type="string" name="pageTitle"/>
+                  <prop type="string" name="primaryButtonBackgroundColor"/>
+                  <prop type="string" name="primaryButtonTextColor"/>
+                  <prop type="string" name="primaryColor"/>
+                  <prop type="string" name="primaryTextColor"/>
+                  <prop type="string" name="secondaryButtonBackgroundColor"/>
+                  <prop type="string" name="secondaryButtonTextColor"/>
+                  <prop type="string" name="secondaryColor"/>
+                  <prop type="string" name="secondaryTextColor"/>
+                </schema>
+              </json>
+            </body>
+          </response>
+          <response isError="True">
+            <body>
+              <json>
+                <schema type="@MgmtErrorFormat"/>
+              </json>
+            </body>
+          </response>
+        </http>
+      </operation>
+      <output type="object" ref="$Instance" clientFlatten="True"/>
+    </command>
+    <command name="create" version="2024-02-16">
+      <resource id="/instances/{}/providersx/foundationallm.configuration/configurations/branding" version="2024-02-16" swagger="fllm-plane/fllm/ResourceProviders/FoundationaLLM.Agent/Paths/L2luc3RhbmNlcy97aW5zdGFuY2VJZH0vcHJvdmlkZXJzWC9Gb3VuZGF0aW9uYUxMTS5Db25maWd1cmF0aW9uL2NvbmZpZ3VyYXRpb25zL2JyYW5kaW5n/V/MjAyNC0wMi0xNg=="/>
+      <argGroup name="">
+        <arg type="string" var="$Path.instanceId" options="instance-id" required="True"/>
+      </argGroup>
+      <argGroup name="Body">
+        <arg type="string" var="$body.accentColor" options="accent-color" group="Body"/>
+        <arg type="string" var="$body.accentTextColor" options="accent-text-color" group="Body"/>
+        <arg type="string" var="$body.allowAgentSelection" options="allow-agent-selection" group="Body"/>
+        <arg type="string" var="$body.backgroundColor" options="background-color" group="Body"/>
+        <arg type="string" var="$body.companyName" options="company-name" group="Body"/>
+        <arg type="string" var="$body.favIconUrl" options="fav-icon-url" group="Body"/>
+        <arg type="boolean" var="$body.kioskMode" options="kiosk-mode" group="Body"/>
+        <arg type="string" var="$body.logoText" options="logo-text" group="Body"/>
+        <arg type="string" var="$body.logoUrl" options="logo-url" group="Body"/>
+        <arg type="string" var="$body.pageTitle" options="page-title" group="Body"/>
+        <arg type="string" var="$body.primaryButtonBackgroundColor" options="primary-button-background-color" group="Body"/>
+        <arg type="string" var="$body.primaryButtonTextColor" options="primary-button-text-color" group="Body"/>
+        <arg type="string" var="$body.primaryColor" options="primary-color" group="Body"/>
+        <arg type="string" var="$body.primaryTextColor" options="primary-text-color" group="Body"/>
+        <arg type="string" var="$body.secondaryButtonBackgroundColor" options="secondary-button-background-color" group="Body"/>
+        <arg type="string" var="$body.secondaryButtonTextColor" options="secondary-button-text-color" group="Body"/>
+        <arg type="string" var="$body.secondaryColor" options="secondary-color" group="Body"/>
+        <arg type="string" var="$body.secondaryTextColor" options="secondary-text-color" group="Body"/>
+      </argGroup>
+      <operation operationId="UpdateBrandingConfigurations">
+        <http path="/instances/{instanceId}/providersX/FoundationaLLM.Configuration/configurations/branding">
+          <request method="put">
+            <path>
+              <param type="string" name="instanceId" arg="$Path.instanceId" required="True"/>
+            </path>
+            <query>
+              <const readOnly="True" const="True" type="string" name="api-version">
+                <default value="&quot;2024-02-16&quot;"/>
+              </const>
+            </query>
+            <body>
+              <json>
+                <schema type="object" name="body" clientFlatten="True">
+                  <prop type="string" name="accentColor" arg="$body.accentColor"/>
+                  <prop type="string" name="accentTextColor" arg="$body.accentTextColor"/>
+                  <prop type="string" name="allowAgentSelection" arg="$body.allowAgentSelection"/>
+                  <prop type="string" name="backgroundColor" arg="$body.backgroundColor"/>
+                  <prop type="string" name="companyName" arg="$body.companyName"/>
+                  <prop type="string" name="favIconUrl" arg="$body.favIconUrl"/>
+                  <prop type="boolean" name="kioskMode" arg="$body.kioskMode"/>
+                  <prop type="string" name="logoText" arg="$body.logoText"/>
+                  <prop type="string" name="logoUrl" arg="$body.logoUrl"/>
+                  <prop type="string" name="pageTitle" arg="$body.pageTitle"/>
+                  <prop type="string" name="primaryButtonBackgroundColor" arg="$body.primaryButtonBackgroundColor"/>
+                  <prop type="string" name="primaryButtonTextColor" arg="$body.primaryButtonTextColor"/>
+                  <prop type="string" name="primaryColor" arg="$body.primaryColor"/>
+                  <prop type="string" name="primaryTextColor" arg="$body.primaryTextColor"/>
+                  <prop type="string" name="secondaryButtonBackgroundColor" arg="$body.secondaryButtonBackgroundColor"/>
+                  <prop type="string" name="secondaryButtonTextColor" arg="$body.secondaryButtonTextColor"/>
+                  <prop type="string" name="secondaryColor" arg="$body.secondaryColor"/>
+                  <prop type="string" name="secondaryTextColor" arg="$body.secondaryTextColor"/>
+                </schema>
+              </json>
+            </body>
+          </request>
+          <response statusCode="200"/>
+          <response isError="True">
+            <body>
+              <json>
+                <schema type="@MgmtErrorFormat"/>
+              </json>
+            </body>
+          </response>
+        </http>
+      </operation>
+    </command>
+  </commandGroup>
+</CodeGen>

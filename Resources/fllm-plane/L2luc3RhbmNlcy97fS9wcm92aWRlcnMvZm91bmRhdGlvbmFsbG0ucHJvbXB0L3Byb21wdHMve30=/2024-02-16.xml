@@ -1,0 +1,143 @@
+<?xml version='1.0' encoding='utf-8'?>
+<CodeGen plane="fllm-plane">
+  <resource id="/instances/{}/providers/foundationallm.prompt/prompts/{}" version="2024-02-16" swagger="fllm-plane/fllm/ResourceProviders/FoundationaLLM.Agent/Paths/L2luc3RhbmNlcy97aW5zdGFuY2VJZH0vcHJvdmlkZXJzL0ZvdW5kYXRpb25hTExNLlByb21wdC9wcm9tcHRzL3tuYW1lfQ==/V/MjAyNC0wMi0xNg=="/>
+  <commandGroup name="prompt">
+    <command name="show" version="2024-02-16" confirmation="">
+      <resource id="/instances/{}/providers/foundationallm.prompt/prompts/{}" version="2024-02-16" swagger="fllm-plane/fllm/ResourceProviders/FoundationaLLM.Agent/Paths/L2luc3RhbmNlcy97aW5zdGFuY2VJZH0vcHJvdmlkZXJzL0ZvdW5kYXRpb25hTExNLlByb21wdC9wcm9tcHRzL3tuYW1lfQ==/V/MjAyNC0wMi0xNg=="/>
+      <argGroup name="">
+        <arg type="string" var="$Path.instanceId" options="instance-id" required="True"/>
+        <arg type="string" var="$Path.name" options="name" required="True"/>
+      </argGroup>
+      <operation operationId="prompts_Get">
+        <http path="/instances/{instanceId}/providers/FoundationaLLM.Prompt/prompts/{name}">
+          <request method="get">
+            <path>
+              <param type="string" name="instanceId" arg="$Path.instanceId" required="True"/>
+              <param type="string" name="name" arg="$Path.name" required="True"/>
+            </path>
+            <query>
+              <const readOnly="True" const="True" type="string" name="api-version">
+                <default value="&quot;2024-02-16&quot;"/>
+              </const>
+            </query>
+          </request>
+          <response statusCode="200">
+            <body>
+              <json var="$Instance">
+                <schema type="array<object>">
+                  <item type="object">
+                    <prop type="string" name="description"/>
+                    <prop type="string" name="name"/>
+                    <prop type="string" name="object_id"/>
+                    <prop type="string" name="prefix"/>
+                    <prop type="string" name="suffix"/>
+                    <prop type="string" name="type"/>
+                  </item>
+                </schema>
+              </json>
+            </body>
+          </response>
+          <response isError="True">
+            <body>
+              <json>
+                <schema type="@MgmtErrorFormat"/>
+              </json>
+            </body>
+          </response>
+        </http>
+      </operation>
+      <output type="array" ref="$Instance" clientFlatten="True"/>
+    </command>
+    <command name="delete" version="2024-02-16" confirmation="Are you sure you want to perform this operation?">
+      <resource id="/instances/{}/providers/foundationallm.prompt/prompts/{}" version="2024-02-16" swagger="fllm-plane/fllm/ResourceProviders/FoundationaLLM.Agent/Paths/L2luc3RhbmNlcy97aW5zdGFuY2VJZH0vcHJvdmlkZXJzL0ZvdW5kYXRpb25hTExNLlByb21wdC9wcm9tcHRzL3tuYW1lfQ==/V/MjAyNC0wMi0xNg=="/>
+      <argGroup name="">
+        <arg type="string" var="$Path.instanceId" options="instance-id" required="True"/>
+        <arg type="string" var="$Path.name" options="name" required="True"/>
+      </argGroup>
+      <operation operationId="prompts_Delete">
+        <http path="/instances/{instanceId}/providers/FoundationaLLM.Prompt/prompts/{name}">
+          <request method="delete">
+            <path>
+              <param type="string" name="instanceId" arg="$Path.instanceId" required="True"/>
+              <param type="string" name="name" arg="$Path.name" required="True"/>
+            </path>
+            <query>
+              <const readOnly="True" const="True" type="string" name="api-version">
+                <default value="&quot;2024-02-16&quot;"/>
+              </const>
+            </query>
+          </request>
+          <response statusCode="200"/>
+          <response isError="True">
+            <body>
+              <json>
+                <schema type="@MgmtErrorFormat"/>
+              </json>
+            </body>
+          </response>
+        </http>
+      </operation>
+    </command>
+    <command name="upsert" version="2024-02-16" confirmation="">
+      <resource id="/instances/{}/providers/foundationallm.prompt/prompts/{}" version="2024-02-16" swagger="fllm-plane/fllm/ResourceProviders/FoundationaLLM.Agent/Paths/L2luc3RhbmNlcy97aW5zdGFuY2VJZH0vcHJvdmlkZXJzL0ZvdW5kYXRpb25hTExNLlByb21wdC9wcm9tcHRzL3tuYW1lfQ==/V/MjAyNC0wMi0xNg=="/>
+      <argGroup name="">
+        <arg type="string" var="$Path.instanceId" options="instance-id" required="True"/>
+        <arg type="string" var="$Path.name" options="name" required="True"/>
+        <arg type="object" var="$body" options="body">
+          <blank value="{}"/>
+          <help short="MultipartPrompt"/>
+          <arg type="string" var="$body.description" options="description"/>
+          <arg type="string" var="$body.name" options="name"/>
+          <arg type="string" var="$body.object_id" options="object-id"/>
+          <arg type="string" var="$body.prefix" options="prefix"/>
+          <arg type="string" var="$body.suffix" options="suffix"/>
+          <arg type="string" var="$body.type" options="type"/>
+        </arg>
+      </argGroup>
+      <operation operationId="prompts_Upsert">
+        <http path="/instances/{instanceId}/providers/FoundationaLLM.Prompt/prompts/{name}">
+          <request method="post">
+            <path>
+              <param type="string" name="instanceId" arg="$Path.instanceId" required="True"/>
+              <param type="string" name="name" arg="$Path.name" required="True"/>
+            </path>
+            <query>
+              <const readOnly="True" const="True" type="string" name="api-version">
+                <default value="&quot;2024-02-16&quot;"/>
+              </const>
+            </query>
+            <body>
+              <json>
+                <schema type="object" name="body" arg="$body" clientFlatten="True">
+                  <prop type="string" name="description" arg="$body.description"/>
+                  <prop type="string" name="name" arg="$body.name"/>
+                  <prop type="string" name="object_id" arg="$body.object_id"/>
+                  <prop type="string" name="prefix" arg="$body.prefix"/>
+                  <prop type="string" name="suffix" arg="$body.suffix"/>
+                  <prop type="string" name="type" arg="$body.type"/>
+                </schema>
+              </json>
+            </body>
+          </request>
+          <response statusCode="200">
+            <body>
+              <json var="$Instance">
+                <schema type="object">
+                  <prop type="string" name="ObjectId"/>
+                </schema>
+              </json>
+            </body>
+          </response>
+          <response isError="True">
+            <body>
+              <json>
+                <schema type="@MgmtErrorFormat"/>
+              </json>
+            </body>
+          </response>
+        </http>
+      </operation>
+      <output type="object" ref="$Instance" clientFlatten="True"/>
+    </command>
+  </commandGroup>
+</CodeGen>

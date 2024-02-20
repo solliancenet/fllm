@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='utf-8'?>
+<CodeGen plane="fllm-plane">
+  <resource id="/instances/{}/providers/foundationallm.prompt/prompts" version="2024-02-16" swagger="fllm-plane/fllm/ResourceProviders/FoundationaLLM.Agent/Paths/L2luc3RhbmNlcy97aW5zdGFuY2VJZH0vcHJvdmlkZXJzL0ZvdW5kYXRpb25hTExNLlByb21wdC9wcm9tcHRz/V/MjAyNC0wMi0xNg=="/>
+  <commandGroup name="prompt">
+    <command name="list" version="2024-02-16">
+      <resource id="/instances/{}/providers/foundationallm.prompt/prompts" version="2024-02-16" swagger="fllm-plane/fllm/ResourceProviders/FoundationaLLM.Agent/Paths/L2luc3RhbmNlcy97aW5zdGFuY2VJZH0vcHJvdmlkZXJzL0ZvdW5kYXRpb25hTExNLlByb21wdC9wcm9tcHRz/V/MjAyNC0wMi0xNg=="/>
+      <argGroup name="">
+        <arg type="string" var="$Path.instanceId" options="instance-id" required="True"/>
+      </argGroup>
+      <operation operationId="prompts_List">
+        <http path="/instances/{instanceId}/providers/FoundationaLLM.Prompt/prompts">
+          <request method="get">
+            <path>
+              <param type="string" name="instanceId" arg="$Path.instanceId" required="True"/>
+            </path>
+            <query>
+              <const readOnly="True" const="True" type="string" name="api-version">
+                <default value="&quot;2024-02-16&quot;"/>
+              </const>
+            </query>
+          </request>
+          <response statusCode="200">
+            <body>
+              <json var="$Instance">
+                <schema type="array<object>">
+                  <item type="object">
+                    <prop type="string" name="description"/>
+                    <prop type="string" name="name"/>
+                    <prop type="string" name="object_id"/>
+                    <prop type="string" name="prefix"/>
+                    <prop type="string" name="suffix"/>
+                    <prop type="string" name="type"/>
+                  </item>
+                </schema>
+              </json>
+            </body>
+          </response>
+          <response isError="True">
+            <body>
+              <json>
+                <schema type="@MgmtErrorFormat"/>
+              </json>
+            </body>
+          </response>
+        </http>
+      </operation>
+      <output type="array" ref="$Instance" clientFlatten="True"/>
+    </command>
+  </commandGroup>
+</CodeGen>

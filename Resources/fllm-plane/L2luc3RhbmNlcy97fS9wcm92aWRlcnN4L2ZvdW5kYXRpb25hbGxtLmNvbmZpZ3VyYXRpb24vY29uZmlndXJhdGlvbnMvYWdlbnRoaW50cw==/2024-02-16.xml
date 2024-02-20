@@ -1,0 +1,81 @@
+<?xml version='1.0' encoding='utf-8'?>
+<CodeGen plane="fllm-plane">
+  <resource id="/instances/{}/providersx/foundationallm.configuration/configurations/agenthints" version="2024-02-16" swagger="fllm-plane/fllm/ResourceProviders/FoundationaLLM.Agent/Paths/L2luc3RhbmNlcy97aW5zdGFuY2VJZH0vcHJvdmlkZXJzWC9Gb3VuZGF0aW9uYUxMTS5Db25maWd1cmF0aW9uL2NvbmZpZ3VyYXRpb25zL2FnZW50SGludHM=/V/MjAyNC0wMi0xNg=="/>
+  <commandGroup name="configuration configuration agent-hint">
+    <command name="show" version="2024-02-16">
+      <resource id="/instances/{}/providersx/foundationallm.configuration/configurations/agenthints" version="2024-02-16" swagger="fllm-plane/fllm/ResourceProviders/FoundationaLLM.Agent/Paths/L2luc3RhbmNlcy97aW5zdGFuY2VJZH0vcHJvdmlkZXJzWC9Gb3VuZGF0aW9uYUxMTS5Db25maWd1cmF0aW9uL2NvbmZpZ3VyYXRpb25zL2FnZW50SGludHM=/V/MjAyNC0wMi0xNg=="/>
+      <argGroup name="">
+        <arg type="string" var="$Path.instanceId" options="instance-id" required="True"/>
+      </argGroup>
+      <operation operationId="GetAgentHints">
+        <http path="/instances/{instanceId}/providersX/FoundationaLLM.Configuration/configurations/agentHints">
+          <request method="get">
+            <path>
+              <param type="string" name="instanceId" arg="$Path.instanceId" required="True"/>
+            </path>
+            <query>
+              <const readOnly="True" const="True" type="string" name="api-version">
+                <default value="&quot;2024-02-16&quot;"/>
+              </const>
+            </query>
+          </request>
+          <response statusCode="200">
+            <body>
+              <json var="$Instance">
+                <schema type="object">
+                  <prop type="boolean" name="enabled"/>
+                </schema>
+              </json>
+            </body>
+          </response>
+          <response isError="True">
+            <body>
+              <json>
+                <schema type="@MgmtErrorFormat"/>
+              </json>
+            </body>
+          </response>
+        </http>
+      </operation>
+      <output type="object" ref="$Instance" clientFlatten="True"/>
+    </command>
+    <command name="create" version="2024-02-16">
+      <resource id="/instances/{}/providersx/foundationallm.configuration/configurations/agenthints" version="2024-02-16" swagger="fllm-plane/fllm/ResourceProviders/FoundationaLLM.Agent/Paths/L2luc3RhbmNlcy97aW5zdGFuY2VJZH0vcHJvdmlkZXJzWC9Gb3VuZGF0aW9uYUxMTS5Db25maWd1cmF0aW9uL2NvbmZpZ3VyYXRpb25zL2FnZW50SGludHM=/V/MjAyNC0wMi0xNg=="/>
+      <argGroup name="">
+        <arg type="string" var="$Path.instanceId" options="instance-id" required="True"/>
+      </argGroup>
+      <argGroup name="Body">
+        <arg type="boolean" var="$body.enabled" options="enabled" group="Body"/>
+      </argGroup>
+      <operation operationId="UpdateAgentHints">
+        <http path="/instances/{instanceId}/providersX/FoundationaLLM.Configuration/configurations/agentHints">
+          <request method="put">
+            <path>
+              <param type="string" name="instanceId" arg="$Path.instanceId" required="True"/>
+            </path>
+            <query>
+              <const readOnly="True" const="True" type="string" name="api-version">
+                <default value="&quot;2024-02-16&quot;"/>
+              </const>
+            </query>
+            <body>
+              <json>
+                <schema type="object" name="body" clientFlatten="True">
+                  <prop type="boolean" name="enabled" arg="$body.enabled"/>
+                </schema>
+              </json>
+            </body>
+          </request>
+          <response statusCode="200"/>
+          <response isError="True">
+            <body>
+              <json>
+                <schema type="@MgmtErrorFormat"/>
+              </json>
+            </body>
+          </response>
+        </http>
+      </operation>
+    </command>
+  </commandGroup>
+</CodeGen>

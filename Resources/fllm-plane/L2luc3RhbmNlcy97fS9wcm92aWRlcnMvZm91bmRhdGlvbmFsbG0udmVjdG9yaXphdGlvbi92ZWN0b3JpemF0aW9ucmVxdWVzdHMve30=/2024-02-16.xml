@@ -1,0 +1,223 @@
+<?xml version='1.0' encoding='utf-8'?>
+<CodeGen plane="fllm-plane">
+  <resource id="/instances/{}/providers/foundationallm.vectorization/vectorizationrequests/{}" version="2024-02-16" swagger="fllm-plane/fllm/ResourceProviders/FoundationaLLM.Agent/Paths/L2luc3RhbmNlcy97aW5zdGFuY2VJZH0vcHJvdmlkZXJzL0ZvdW5kYXRpb25hTExNLlZlY3Rvcml6YXRpb24vdmVjdG9yaXphdGlvbnJlcXVlc3RzL3tuYW1lfQ==/V/MjAyNC0wMi0xNg=="/>
+  <commandGroup name="vectorization vectorizationrequest">
+    <command name="show" version="2024-02-16">
+      <resource id="/instances/{}/providers/foundationallm.vectorization/vectorizationrequests/{}" version="2024-02-16" swagger="fllm-plane/fllm/ResourceProviders/FoundationaLLM.Agent/Paths/L2luc3RhbmNlcy97aW5zdGFuY2VJZH0vcHJvdmlkZXJzL0ZvdW5kYXRpb25hTExNLlZlY3Rvcml6YXRpb24vdmVjdG9yaXphdGlvbnJlcXVlc3RzL3tuYW1lfQ==/V/MjAyNC0wMi0xNg=="/>
+      <argGroup name="">
+        <arg type="string" var="$Path.instanceId" options="instance-id" required="True"/>
+        <arg type="string" var="$Path.name" options="name" required="True"/>
+      </argGroup>
+      <operation operationId="vectorizationrequests_Get">
+        <http path="/instances/{instanceId}/providers/FoundationaLLM.Vectorization/vectorizationrequests/{name}">
+          <request method="get">
+            <path>
+              <param type="string" name="instanceId" arg="$Path.instanceId" required="True"/>
+              <param type="string" name="name" arg="$Path.name" required="True"/>
+            </path>
+            <query>
+              <const readOnly="True" const="True" type="string" name="api-version">
+                <default value="&quot;2024-02-16&quot;"/>
+              </const>
+            </query>
+          </request>
+          <response statusCode="200">
+            <body>
+              <json var="$Instance">
+                <schema type="array<object>">
+                  <item type="object">
+                    <prop readOnly="True" type="boolean" name="complete"/>
+                    <prop type="array<string>" name="completedSteps">
+                      <item type="string"/>
+                    </prop>
+                    <prop type="object" name="contentIdentifier">
+                      <prop type="string" name="canonicalId"/>
+                      <prop type="string" name="contentSourceProfileName"/>
+                      <prop readOnly="True" type="string" name="fileName"/>
+                      <prop type="array<string>" name="multipartId">
+                        <item type="string"/>
+                      </prop>
+                      <prop readOnly="True" type="string" name="uniqueId"/>
+                    </prop>
+                    <prop readOnly="True" type="string" name="currentStep"/>
+                    <prop type="string" name="id"/>
+                    <prop type="string" name="objectId"/>
+                    <prop type="integer32" name="processingType">
+                      <enum>
+                        <item value="0"/>
+                        <item value="1"/>
+                      </enum>
+                    </prop>
+                    <prop type="array<string>" name="remainingSteps">
+                      <item type="string"/>
+                    </prop>
+                    <prop type="array<object>" name="steps">
+                      <item type="object">
+                        <prop type="string" name="id"/>
+                        <prop type="object" name="parameters">
+                          <additionalProp>
+                            <item type="string"/>
+                          </additionalProp>
+                        </prop>
+                      </item>
+                    </prop>
+                  </item>
+                </schema>
+              </json>
+            </body>
+          </response>
+          <response isError="True">
+            <body>
+              <json>
+                <schema type="@MgmtErrorFormat"/>
+              </json>
+            </body>
+          </response>
+        </http>
+      </operation>
+      <output type="array" ref="$Instance" clientFlatten="True"/>
+    </command>
+    <command name="delete" version="2024-02-16" confirmation="Are you sure you want to perform this operation?">
+      <resource id="/instances/{}/providers/foundationallm.vectorization/vectorizationrequests/{}" version="2024-02-16" swagger="fllm-plane/fllm/ResourceProviders/FoundationaLLM.Agent/Paths/L2luc3RhbmNlcy97aW5zdGFuY2VJZH0vcHJvdmlkZXJzL0ZvdW5kYXRpb25hTExNLlZlY3Rvcml6YXRpb24vdmVjdG9yaXphdGlvbnJlcXVlc3RzL3tuYW1lfQ==/V/MjAyNC0wMi0xNg=="/>
+      <argGroup name="">
+        <arg type="string" var="$Path.instanceId" options="instance-id" required="True"/>
+        <arg type="string" var="$Path.name" options="name" required="True"/>
+      </argGroup>
+      <operation operationId="vectorizationrequests_Delete">
+        <http path="/instances/{instanceId}/providers/FoundationaLLM.Vectorization/vectorizationrequests/{name}">
+          <request method="delete">
+            <path>
+              <param type="string" name="instanceId" arg="$Path.instanceId" required="True"/>
+              <param type="string" name="name" arg="$Path.name" required="True"/>
+            </path>
+            <query>
+              <const readOnly="True" const="True" type="string" name="api-version">
+                <default value="&quot;2024-02-16&quot;"/>
+              </const>
+            </query>
+          </request>
+          <response statusCode="200"/>
+          <response isError="True">
+            <body>
+              <json>
+                <schema type="@MgmtErrorFormat"/>
+              </json>
+            </body>
+          </response>
+        </http>
+      </operation>
+    </command>
+    <command name="upsert" version="2024-02-16">
+      <resource id="/instances/{}/providers/foundationallm.vectorization/vectorizationrequests/{}" version="2024-02-16" swagger="fllm-plane/fllm/ResourceProviders/FoundationaLLM.Agent/Paths/L2luc3RhbmNlcy97aW5zdGFuY2VJZH0vcHJvdmlkZXJzL0ZvdW5kYXRpb25hTExNLlZlY3Rvcml6YXRpb24vdmVjdG9yaXphdGlvbnJlcXVlc3RzL3tuYW1lfQ==/V/MjAyNC0wMi0xNg=="/>
+      <argGroup name="">
+        <arg type="string" var="$Path.instanceId" options="instance-id" required="True"/>
+        <arg type="string" var="$Path.name" options="name" required="True"/>
+      </argGroup>
+      <argGroup name="Body">
+        <arg type="array<string>" var="$body.completedSteps" options="completed-steps" group="Body">
+          <item type="string"/>
+        </arg>
+        <arg type="object" var="$body.contentIdentifier" options="content-identifier" group="Body">
+          <arg type="string" var="$body.contentIdentifier.canonicalId" options="canonical-id"/>
+          <arg type="string" var="$body.contentIdentifier.contentSourceProfileName" options="content-source-profile-name"/>
+          <arg type="array<string>" var="$body.contentIdentifier.multipartId" options="multipart-id">
+            <item type="string"/>
+          </arg>
+        </arg>
+        <arg type="string" var="$body.id" options="id" group="Body"/>
+        <arg type="string" var="$body.objectId" options="object-id" group="Body"/>
+        <arg type="integer32" var="$body.processingType" options="processing-type" group="Body">
+          <enum>
+            <item name="0" value="0"/>
+            <item name="1" value="1"/>
+          </enum>
+        </arg>
+        <arg type="array<string>" var="$body.remainingSteps" options="remaining-steps" group="Body">
+          <item type="string"/>
+        </arg>
+        <arg type="array<object>" var="$body.steps" options="steps" group="Body">
+          <blank value="{}"/>
+          <item type="object">
+            <arg type="string" var="$body.steps[].id" options="id"/>
+            <arg type="object" var="$body.steps[].parameters" options="parameters">
+              <additionalProp>
+                <item type="string"/>
+              </additionalProp>
+            </arg>
+          </item>
+        </arg>
+      </argGroup>
+      <operation operationId="vectorizationrequests_Upsert">
+        <http path="/instances/{instanceId}/providers/FoundationaLLM.Vectorization/vectorizationrequests/{name}">
+          <request method="post">
+            <path>
+              <param type="string" name="instanceId" arg="$Path.instanceId" required="True"/>
+              <param type="string" name="name" arg="$Path.name" required="True"/>
+            </path>
+            <query>
+              <const readOnly="True" const="True" type="string" name="api-version">
+                <default value="&quot;2024-02-16&quot;"/>
+              </const>
+            </query>
+            <body>
+              <json>
+                <schema type="object" name="body" clientFlatten="True">
+                  <prop type="array<string>" name="completedSteps" arg="$body.completedSteps">
+                    <item type="string"/>
+                  </prop>
+                  <prop type="object" name="contentIdentifier" arg="$body.contentIdentifier">
+                    <prop type="string" name="canonicalId" arg="$body.contentIdentifier.canonicalId"/>
+                    <prop type="string" name="contentSourceProfileName" arg="$body.contentIdentifier.contentSourceProfileName"/>
+                    <prop type="array<string>" name="multipartId" arg="$body.contentIdentifier.multipartId">
+                      <item type="string"/>
+                    </prop>
+                  </prop>
+                  <prop type="string" name="id" arg="$body.id"/>
+                  <prop type="string" name="objectId" arg="$body.objectId"/>
+                  <prop type="integer32" name="processingType" arg="$body.processingType">
+                    <enum>
+                      <item value="0"/>
+                      <item value="1"/>
+                    </enum>
+                  </prop>
+                  <prop type="array<string>" name="remainingSteps" arg="$body.remainingSteps">
+                    <item type="string"/>
+                  </prop>
+                  <prop type="array<object>" name="steps" arg="$body.steps">
+                    <item type="object">
+                      <prop type="string" name="id" arg="$body.steps[].id"/>
+                      <prop type="object" name="parameters" arg="$body.steps[].parameters">
+                        <additionalProp>
+                          <item type="string"/>
+                        </additionalProp>
+                      </prop>
+                    </item>
+                  </prop>
+                </schema>
+              </json>
+            </body>
+          </request>
+          <response statusCode="200">
+            <body>
+              <json var="$Instance">
+                <schema type="object">
+                  <prop type="string" name="error_message"/>
+                  <prop type="boolean" name="is_success"/>
+                  <prop type="string" name="object_id"/>
+                </schema>
+              </json>
+            </body>
+          </response>
+          <response isError="True">
+            <body>
+              <json>
+                <schema type="@MgmtErrorFormat"/>
+              </json>
+            </body>
+          </response>
+        </http>
+      </operation>
+      <output type="object" ref="$Instance" clientFlatten="True"/>
+    </command>
+  </commandGroup>
+</CodeGen>

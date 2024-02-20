@@ -1,0 +1,182 @@
+<?xml version='1.0' encoding='utf-8'?>
+<CodeGen plane="fllm-plane">
+  <resource id="/instances/{}/providers/foundationallm.vectorization/contentsourceprofiles/{}" version="2024-02-16" swagger="fllm-plane/fllm/ResourceProviders/FoundationaLLM.Agent/Paths/L2luc3RhbmNlcy97aW5zdGFuY2VJZH0vcHJvdmlkZXJzL0ZvdW5kYXRpb25hTExNLlZlY3Rvcml6YXRpb24vY29udGVudHNvdXJjZXByb2ZpbGVzL3tuYW1lfQ==/V/MjAyNC0wMi0xNg=="/>
+  <commandGroup name="vectorization contentsourceprofile">
+    <command name="show" version="2024-02-16">
+      <resource id="/instances/{}/providers/foundationallm.vectorization/contentsourceprofiles/{}" version="2024-02-16" swagger="fllm-plane/fllm/ResourceProviders/FoundationaLLM.Agent/Paths/L2luc3RhbmNlcy97aW5zdGFuY2VJZH0vcHJvdmlkZXJzL0ZvdW5kYXRpb25hTExNLlZlY3Rvcml6YXRpb24vY29udGVudHNvdXJjZXByb2ZpbGVzL3tuYW1lfQ==/V/MjAyNC0wMi0xNg=="/>
+      <argGroup name="">
+        <arg type="string" var="$Path.instanceId" options="instance-id" required="True"/>
+        <arg type="string" var="$Path.name" options="name" required="True"/>
+      </argGroup>
+      <operation operationId="contentsourceprofiles_Get">
+        <http path="/instances/{instanceId}/providers/FoundationaLLM.Vectorization/contentsourceprofiles/{name}">
+          <request method="get">
+            <path>
+              <param type="string" name="instanceId" arg="$Path.instanceId" required="True"/>
+              <param type="string" name="name" arg="$Path.name" required="True"/>
+            </path>
+            <query>
+              <const readOnly="True" const="True" type="string" name="api-version">
+                <default value="&quot;2024-02-16&quot;"/>
+              </const>
+            </query>
+          </request>
+          <response statusCode="200">
+            <body>
+              <json var="$Instance">
+                <schema type="array<object>">
+                  <item type="object">
+                    <prop type="object" name="configurationReferences">
+                      <additionalProp>
+                        <item type="string"/>
+                      </additionalProp>
+                    </prop>
+                    <prop type="string" name="name"/>
+                    <prop type="string" name="objectId"/>
+                    <prop type="object" name="settings">
+                      <additionalProp>
+                        <item type="string"/>
+                      </additionalProp>
+                    </prop>
+                    <prop type="integer32" name="type">
+                      <enum>
+                        <item value="0"/>
+                        <item value="1"/>
+                        <item value="2"/>
+                      </enum>
+                    </prop>
+                  </item>
+                </schema>
+              </json>
+            </body>
+          </response>
+          <response isError="True">
+            <body>
+              <json>
+                <schema type="@MgmtErrorFormat"/>
+              </json>
+            </body>
+          </response>
+        </http>
+      </operation>
+      <output type="array" ref="$Instance" clientFlatten="True"/>
+    </command>
+    <command name="delete" version="2024-02-16" confirmation="Are you sure you want to perform this operation?">
+      <resource id="/instances/{}/providers/foundationallm.vectorization/contentsourceprofiles/{}" version="2024-02-16" swagger="fllm-plane/fllm/ResourceProviders/FoundationaLLM.Agent/Paths/L2luc3RhbmNlcy97aW5zdGFuY2VJZH0vcHJvdmlkZXJzL0ZvdW5kYXRpb25hTExNLlZlY3Rvcml6YXRpb24vY29udGVudHNvdXJjZXByb2ZpbGVzL3tuYW1lfQ==/V/MjAyNC0wMi0xNg=="/>
+      <argGroup name="">
+        <arg type="string" var="$Path.instanceId" options="instance-id" required="True"/>
+        <arg type="string" var="$Path.name" options="name" required="True"/>
+      </argGroup>
+      <operation operationId="contentsourceprofiles_Delete">
+        <http path="/instances/{instanceId}/providers/FoundationaLLM.Vectorization/contentsourceprofiles/{name}">
+          <request method="delete">
+            <path>
+              <param type="string" name="instanceId" arg="$Path.instanceId" required="True"/>
+              <param type="string" name="name" arg="$Path.name" required="True"/>
+            </path>
+            <query>
+              <const readOnly="True" const="True" type="string" name="api-version">
+                <default value="&quot;2024-02-16&quot;"/>
+              </const>
+            </query>
+          </request>
+          <response statusCode="200"/>
+          <response isError="True">
+            <body>
+              <json>
+                <schema type="@MgmtErrorFormat"/>
+              </json>
+            </body>
+          </response>
+        </http>
+      </operation>
+    </command>
+    <command name="upsert" version="2024-02-16">
+      <resource id="/instances/{}/providers/foundationallm.vectorization/contentsourceprofiles/{}" version="2024-02-16" swagger="fllm-plane/fllm/ResourceProviders/FoundationaLLM.Agent/Paths/L2luc3RhbmNlcy97aW5zdGFuY2VJZH0vcHJvdmlkZXJzL0ZvdW5kYXRpb25hTExNLlZlY3Rvcml6YXRpb24vY29udGVudHNvdXJjZXByb2ZpbGVzL3tuYW1lfQ==/V/MjAyNC0wMi0xNg=="/>
+      <argGroup name="">
+        <arg type="string" var="$Path.instanceId" options="instance-id" required="True"/>
+        <arg type="string" var="$Path.name" options="name" required="True"/>
+        <arg type="object" var="$body" options="body">
+          <blank value="{}"/>
+          <help short="ContentSourceProfile"/>
+          <arg type="object" var="$body.configurationReferences" options="configuration-references">
+            <additionalProp>
+              <item type="string"/>
+            </additionalProp>
+          </arg>
+          <arg type="string" var="$body.name" options="name"/>
+          <arg type="string" var="$body.objectId" options="object-id"/>
+          <arg type="object" var="$body.settings" options="settings">
+            <additionalProp>
+              <item type="string"/>
+            </additionalProp>
+          </arg>
+          <arg type="integer32" var="$body.type" options="type">
+            <enum>
+              <item name="0" value="0"/>
+              <item name="1" value="1"/>
+              <item name="2" value="2"/>
+            </enum>
+          </arg>
+        </arg>
+      </argGroup>
+      <operation operationId="contentsourceprofiles_Upsert">
+        <http path="/instances/{instanceId}/providers/FoundationaLLM.Vectorization/contentsourceprofiles/{name}">
+          <request method="post">
+            <path>
+              <param type="string" name="instanceId" arg="$Path.instanceId" required="True"/>
+              <param type="string" name="name" arg="$Path.name" required="True"/>
+            </path>
+            <query>
+              <const readOnly="True" const="True" type="string" name="api-version">
+                <default value="&quot;2024-02-16&quot;"/>
+              </const>
+            </query>
+            <body>
+              <json>
+                <schema type="object" name="body" arg="$body" clientFlatten="True">
+                  <prop type="object" name="configurationReferences" arg="$body.configurationReferences">
+                    <additionalProp>
+                      <item type="string"/>
+                    </additionalProp>
+                  </prop>
+                  <prop type="string" name="name" arg="$body.name"/>
+                  <prop type="string" name="objectId" arg="$body.objectId"/>
+                  <prop type="object" name="settings" arg="$body.settings">
+                    <additionalProp>
+                      <item type="string"/>
+                    </additionalProp>
+                  </prop>
+                  <prop type="integer32" name="type" arg="$body.type">
+                    <enum>
+                      <item value="0"/>
+                      <item value="1"/>
+                      <item value="2"/>
+                    </enum>
+                  </prop>
+                </schema>
+              </json>
+            </body>
+          </request>
+          <response statusCode="200">
+            <body>
+              <json var="$Instance">
+                <schema type="object">
+                  <prop type="string" name="ObjectId"/>
+                </schema>
+              </json>
+            </body>
+          </response>
+          <response isError="True">
+            <body>
+              <json>
+                <schema type="@MgmtErrorFormat"/>
+              </json>
+            </body>
+          </response>
+        </http>
+      </operation>
+      <output type="object" ref="$Instance" clientFlatten="True"/>
+    </command>
+  </commandGroup>
+</CodeGen>
