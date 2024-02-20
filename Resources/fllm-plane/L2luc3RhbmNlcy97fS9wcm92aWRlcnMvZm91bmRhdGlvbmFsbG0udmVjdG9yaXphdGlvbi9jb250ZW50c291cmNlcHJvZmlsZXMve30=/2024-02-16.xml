@@ -1,9 +1,9 @@
 <?xml version='1.0' encoding='utf-8'?>
 <CodeGen plane="fllm-plane">
-  <resource id="/instances/{}/providers/foundationallm.vectorization/contentsourceprofiles/{}" version="2024-02-16" swagger="fllm-plane/fllm/ResourceProviders/FoundationaLLM.Agent/Paths/L2luc3RhbmNlcy97aW5zdGFuY2VJZH0vcHJvdmlkZXJzL0ZvdW5kYXRpb25hTExNLlZlY3Rvcml6YXRpb24vY29udGVudHNvdXJjZXByb2ZpbGVzL3tuYW1lfQ==/V/MjAyNC0wMi0xNg=="/>
+  <resource id="/instances/{}/providers/foundationallm.vectorization/contentsourceprofiles/{}" version="2024-02-16" swagger="fllm-plane/fllm/ResourceProviders/FoundationaLLM.Vectorization/Paths/L2luc3RhbmNlcy97aW5zdGFuY2VJZH0vcHJvdmlkZXJzL0ZvdW5kYXRpb25hTExNLlZlY3Rvcml6YXRpb24vY29udGVudHNvdXJjZXByb2ZpbGVzL3tuYW1lfQ==/V/MjAyNC0wMi0xNg=="/>
   <commandGroup name="vectorization contentsourceprofile">
     <command name="show" version="2024-02-16">
-      <resource id="/instances/{}/providers/foundationallm.vectorization/contentsourceprofiles/{}" version="2024-02-16" swagger="fllm-plane/fllm/ResourceProviders/FoundationaLLM.Agent/Paths/L2luc3RhbmNlcy97aW5zdGFuY2VJZH0vcHJvdmlkZXJzL0ZvdW5kYXRpb25hTExNLlZlY3Rvcml6YXRpb24vY29udGVudHNvdXJjZXByb2ZpbGVzL3tuYW1lfQ==/V/MjAyNC0wMi0xNg=="/>
+      <resource id="/instances/{}/providers/foundationallm.vectorization/contentsourceprofiles/{}" version="2024-02-16" swagger="fllm-plane/fllm/ResourceProviders/FoundationaLLM.Vectorization/Paths/L2luc3RhbmNlcy97aW5zdGFuY2VJZH0vcHJvdmlkZXJzL0ZvdW5kYXRpb25hTExNLlZlY3Rvcml6YXRpb24vY29udGVudHNvdXJjZXByb2ZpbGVzL3tuYW1lfQ==/V/MjAyNC0wMi0xNg=="/>
       <argGroup name="">
         <arg type="string" var="$Path.instanceId" options="instance-id" required="True"/>
         <arg type="string" var="$Path.name" options="name" required="True"/>
@@ -26,20 +26,20 @@
               <json var="$Instance">
                 <schema type="array<object>">
                   <item type="object">
-                    <prop type="object" name="configurationReferences">
+                    <prop type="object" name="configuration_references">
                       <additionalProp>
                         <item type="string"/>
                       </additionalProp>
                     </prop>
-                    <prop type="integer32" name="contentSource">
+                    <prop type="string" name="content_source">
                       <enum>
-                        <item value="0"/>
-                        <item value="1"/>
-                        <item value="2"/>
+                        <item value="&quot;AzureDataLake&quot;"/>
+                        <item value="&quot;AzureSQLDatabase&quot;"/>
+                        <item value="&quot;SharePointOnline&quot;"/>
                       </enum>
                     </prop>
                     <prop type="string" name="name"/>
-                    <prop type="string" name="objectId"/>
+                    <prop type="string" name="object_id"/>
                     <prop type="object" name="settings">
                       <additionalProp>
                         <item type="string"/>
@@ -63,7 +63,7 @@
       <output type="array" ref="$Instance" clientFlatten="True"/>
     </command>
     <command name="delete" version="2024-02-16" confirmation="Are you sure you want to perform this operation?">
-      <resource id="/instances/{}/providers/foundationallm.vectorization/contentsourceprofiles/{}" version="2024-02-16" swagger="fllm-plane/fllm/ResourceProviders/FoundationaLLM.Agent/Paths/L2luc3RhbmNlcy97aW5zdGFuY2VJZH0vcHJvdmlkZXJzL0ZvdW5kYXRpb25hTExNLlZlY3Rvcml6YXRpb24vY29udGVudHNvdXJjZXByb2ZpbGVzL3tuYW1lfQ==/V/MjAyNC0wMi0xNg=="/>
+      <resource id="/instances/{}/providers/foundationallm.vectorization/contentsourceprofiles/{}" version="2024-02-16" swagger="fllm-plane/fllm/ResourceProviders/FoundationaLLM.Vectorization/Paths/L2luc3RhbmNlcy97aW5zdGFuY2VJZH0vcHJvdmlkZXJzL0ZvdW5kYXRpb25hTExNLlZlY3Rvcml6YXRpb24vY29udGVudHNvdXJjZXByb2ZpbGVzL3tuYW1lfQ==/V/MjAyNC0wMi0xNg=="/>
       <argGroup name="">
         <arg type="string" var="$Path.instanceId" options="instance-id" required="True"/>
         <arg type="string" var="$Path.name" options="name" required="True"/>
@@ -93,27 +93,28 @@
       </operation>
     </command>
     <command name="upsert" version="2024-02-16">
-      <resource id="/instances/{}/providers/foundationallm.vectorization/contentsourceprofiles/{}" version="2024-02-16" swagger="fllm-plane/fllm/ResourceProviders/FoundationaLLM.Agent/Paths/L2luc3RhbmNlcy97aW5zdGFuY2VJZH0vcHJvdmlkZXJzL0ZvdW5kYXRpb25hTExNLlZlY3Rvcml6YXRpb24vY29udGVudHNvdXJjZXByb2ZpbGVzL3tuYW1lfQ==/V/MjAyNC0wMi0xNg=="/>
+      <resource id="/instances/{}/providers/foundationallm.vectorization/contentsourceprofiles/{}" version="2024-02-16" swagger="fllm-plane/fllm/ResourceProviders/FoundationaLLM.Vectorization/Paths/L2luc3RhbmNlcy97aW5zdGFuY2VJZH0vcHJvdmlkZXJzL0ZvdW5kYXRpb25hTExNLlZlY3Rvcml6YXRpb24vY29udGVudHNvdXJjZXByb2ZpbGVzL3tuYW1lfQ==/V/MjAyNC0wMi0xNg=="/>
       <argGroup name="">
         <arg type="string" var="$Path.instanceId" options="instance-id" required="True"/>
         <arg type="string" var="$Path.name" options="name" required="True"/>
         <arg type="object" var="$body" options="body">
           <blank value="{}"/>
           <help short="ContentSourceProfile"/>
-          <arg type="object" var="$body.configurationReferences" options="configuration-references">
+          <arg type="object" var="$body.configuration_references" options="configuration-references">
             <additionalProp>
               <item type="string"/>
             </additionalProp>
           </arg>
-          <arg type="integer32" var="$body.contentSource" options="content-source">
+          <arg type="string" var="$body.content_source" options="content-source">
+            <help short="ContentSourceType"/>
             <enum>
-              <item name="0" value="0"/>
-              <item name="1" value="1"/>
-              <item name="2" value="2"/>
+              <item name="AzureDataLake" value="&quot;AzureDataLake&quot;"/>
+              <item name="AzureSQLDatabase" value="&quot;AzureSQLDatabase&quot;"/>
+              <item name="SharePointOnline" value="&quot;SharePointOnline&quot;"/>
             </enum>
           </arg>
           <arg type="string" var="$body.name" options="name"/>
-          <arg type="string" var="$body.objectId" options="object-id"/>
+          <arg type="string" var="$body.object_id" options="object-id"/>
           <arg type="object" var="$body.settings" options="settings">
             <additionalProp>
               <item type="string"/>
@@ -137,20 +138,20 @@
             <body>
               <json>
                 <schema type="object" name="body" arg="$body" clientFlatten="True">
-                  <prop type="object" name="configurationReferences" arg="$body.configurationReferences">
+                  <prop type="object" name="configuration_references" arg="$body.configuration_references">
                     <additionalProp>
                       <item type="string"/>
                     </additionalProp>
                   </prop>
-                  <prop type="integer32" name="contentSource" arg="$body.contentSource">
+                  <prop type="string" name="content_source" arg="$body.content_source">
                     <enum>
-                      <item value="0"/>
-                      <item value="1"/>
-                      <item value="2"/>
+                      <item value="&quot;AzureDataLake&quot;"/>
+                      <item value="&quot;AzureSQLDatabase&quot;"/>
+                      <item value="&quot;SharePointOnline&quot;"/>
                     </enum>
                   </prop>
                   <prop type="string" name="name" arg="$body.name"/>
-                  <prop type="string" name="objectId" arg="$body.objectId"/>
+                  <prop type="string" name="object_id" arg="$body.object_id"/>
                   <prop type="object" name="settings" arg="$body.settings">
                     <additionalProp>
                       <item type="string"/>

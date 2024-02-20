@@ -1,9 +1,9 @@
 <?xml version='1.0' encoding='utf-8'?>
 <CodeGen plane="fllm-plane">
-  <resource id="/instances/{}/providersx/foundationallm.configuration/configurations/branding" version="2024-02-16" swagger="fllm-plane/fllm/ResourceProviders/FoundationaLLM.Agent/Paths/L2luc3RhbmNlcy97aW5zdGFuY2VJZH0vcHJvdmlkZXJzWC9Gb3VuZGF0aW9uYUxMTS5Db25maWd1cmF0aW9uL2NvbmZpZ3VyYXRpb25zL2JyYW5kaW5n/V/MjAyNC0wMi0xNg=="/>
+  <resource id="/instances/{}/providersx/foundationallm.configuration/configurations/branding" version="2024-02-16" swagger="fllm-plane/fllm/ResourceProviders/FoundationaLLM.Configuration/Paths/L2luc3RhbmNlcy97aW5zdGFuY2VJZH0vcHJvdmlkZXJzWC9Gb3VuZGF0aW9uYUxMTS5Db25maWd1cmF0aW9uL2NvbmZpZ3VyYXRpb25zL2JyYW5kaW5n/V/MjAyNC0wMi0xNg=="/>
   <commandGroup name="configuration configuration branding">
     <command name="show" version="2024-02-16">
-      <resource id="/instances/{}/providersx/foundationallm.configuration/configurations/branding" version="2024-02-16" swagger="fllm-plane/fllm/ResourceProviders/FoundationaLLM.Agent/Paths/L2luc3RhbmNlcy97aW5zdGFuY2VJZH0vcHJvdmlkZXJzWC9Gb3VuZGF0aW9uYUxMTS5Db25maWd1cmF0aW9uL2NvbmZpZ3VyYXRpb25zL2JyYW5kaW5n/V/MjAyNC0wMi0xNg=="/>
+      <resource id="/instances/{}/providersx/foundationallm.configuration/configurations/branding" version="2024-02-16" swagger="fllm-plane/fllm/ResourceProviders/FoundationaLLM.Configuration/Paths/L2luc3RhbmNlcy97aW5zdGFuY2VJZH0vcHJvdmlkZXJzWC9Gb3VuZGF0aW9uYUxMTS5Db25maWd1cmF0aW9uL2NvbmZpZ3VyYXRpb25zL2JyYW5kaW5n/V/MjAyNC0wMi0xNg=="/>
       <argGroup name="">
         <arg type="string" var="$Path.instanceId" options="instance-id" required="True"/>
       </argGroup>
@@ -57,7 +57,7 @@
       <output type="object" ref="$Instance" clientFlatten="True"/>
     </command>
     <command name="create" version="2024-02-16">
-      <resource id="/instances/{}/providersx/foundationallm.configuration/configurations/branding" version="2024-02-16" swagger="fllm-plane/fllm/ResourceProviders/FoundationaLLM.Agent/Paths/L2luc3RhbmNlcy97aW5zdGFuY2VJZH0vcHJvdmlkZXJzWC9Gb3VuZGF0aW9uYUxMTS5Db25maWd1cmF0aW9uL2NvbmZpZ3VyYXRpb25zL2JyYW5kaW5n/V/MjAyNC0wMi0xNg=="/>
+      <resource id="/instances/{}/providersx/foundationallm.configuration/configurations/branding" version="2024-02-16" swagger="fllm-plane/fllm/ResourceProviders/FoundationaLLM.Configuration/Paths/L2luc3RhbmNlcy97aW5zdGFuY2VJZH0vcHJvdmlkZXJzWC9Gb3VuZGF0aW9uYUxMTS5Db25maWd1cmF0aW9uL2NvbmZpZ3VyYXRpb25zL2JyYW5kaW5n/V/MjAyNC0wMi0xNg=="/>
       <argGroup name="">
         <arg type="string" var="$Path.instanceId" options="instance-id" required="True"/>
       </argGroup>

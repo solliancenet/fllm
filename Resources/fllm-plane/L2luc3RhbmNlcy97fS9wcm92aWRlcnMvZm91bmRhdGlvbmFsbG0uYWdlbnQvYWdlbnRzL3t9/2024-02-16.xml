@@ -124,7 +124,6 @@
           <arg type="object" var="$body.gatekeeper" options="gatekeeper">
             <help short="Gatekeeper"/>
             <arg type="array<string>" var="$body.gatekeeper.options" options="options">
-              <blank value="{}"/>
               <item type="string"/>
             </arg>
             <arg type="boolean" var="$body.gatekeeper.use_system_setting" options="use-system-setting"/>
@@ -137,9 +136,7 @@
             <arg type="string" var="$body.language_model.api_version" options="api-version"/>
             <arg type="string" var="$body.language_model.deployment" options="deployment"/>
             <arg type="string" var="$body.language_model.provider" options="provider"/>
-            <arg type="float" var="$body.language_model.temperature" options="temperature">
-              <blank value="{}"/>
-            </arg>
+            <arg type="float" var="$body.language_model.temperature" options="temperature"/>
             <arg type="string" var="$body.language_model.type" options="type"/>
             <arg type="boolean" var="$body.language_model.use_chat" options="use-chat"/>
             <arg type="string" var="$body.language_model.version" options="version"/>

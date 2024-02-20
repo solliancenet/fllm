@@ -1,9 +1,9 @@
 <?xml version='1.0' encoding='utf-8'?>
 <CodeGen plane="fllm-plane">
-  <resource id="/instances/{}/providers/foundationallm.vectorization/indexingprofiles/{}" version="2024-02-16" swagger="fllm-plane/fllm/ResourceProviders/FoundationaLLM.Agent/Paths/L2luc3RhbmNlcy97aW5zdGFuY2VJZH0vcHJvdmlkZXJzL0ZvdW5kYXRpb25hTExNLlZlY3Rvcml6YXRpb24vaW5kZXhpbmdwcm9maWxlcy97bmFtZX0=/V/MjAyNC0wMi0xNg=="/>
+  <resource id="/instances/{}/providers/foundationallm.vectorization/indexingprofiles/{}" version="2024-02-16" swagger="fllm-plane/fllm/ResourceProviders/FoundationaLLM.Vectorization/Paths/L2luc3RhbmNlcy97aW5zdGFuY2VJZH0vcHJvdmlkZXJzL0ZvdW5kYXRpb25hTExNLlZlY3Rvcml6YXRpb24vaW5kZXhpbmdwcm9maWxlcy97bmFtZX0=/V/MjAyNC0wMi0xNg=="/>
   <commandGroup name="vectorization indexingprofile">
     <command name="show" version="2024-02-16">
-      <resource id="/instances/{}/providers/foundationallm.vectorization/indexingprofiles/{}" version="2024-02-16" swagger="fllm-plane/fllm/ResourceProviders/FoundationaLLM.Agent/Paths/L2luc3RhbmNlcy97aW5zdGFuY2VJZH0vcHJvdmlkZXJzL0ZvdW5kYXRpb25hTExNLlZlY3Rvcml6YXRpb24vaW5kZXhpbmdwcm9maWxlcy97bmFtZX0=/V/MjAyNC0wMi0xNg=="/>
+      <resource id="/instances/{}/providers/foundationallm.vectorization/indexingprofiles/{}" version="2024-02-16" swagger="fllm-plane/fllm/ResourceProviders/FoundationaLLM.Vectorization/Paths/L2luc3RhbmNlcy97aW5zdGFuY2VJZH0vcHJvdmlkZXJzL0ZvdW5kYXRpb25hTExNLlZlY3Rvcml6YXRpb24vaW5kZXhpbmdwcm9maWxlcy97bmFtZX0=/V/MjAyNC0wMi0xNg=="/>
       <argGroup name="">
         <arg type="string" var="$Path.instanceId" options="instance-id" required="True"/>
         <arg type="string" var="$Path.name" options="name" required="True"/>
@@ -61,7 +61,7 @@
       <output type="array" ref="$Instance" clientFlatten="True"/>
     </command>
     <command name="delete" version="2024-02-16" confirmation="Are you sure you want to perform this operation?">
-      <resource id="/instances/{}/providers/foundationallm.vectorization/indexingprofiles/{}" version="2024-02-16" swagger="fllm-plane/fllm/ResourceProviders/FoundationaLLM.Agent/Paths/L2luc3RhbmNlcy97aW5zdGFuY2VJZH0vcHJvdmlkZXJzL0ZvdW5kYXRpb25hTExNLlZlY3Rvcml6YXRpb24vaW5kZXhpbmdwcm9maWxlcy97bmFtZX0=/V/MjAyNC0wMi0xNg=="/>
+      <resource id="/instances/{}/providers/foundationallm.vectorization/indexingprofiles/{}" version="2024-02-16" swagger="fllm-plane/fllm/ResourceProviders/FoundationaLLM.Vectorization/Paths/L2luc3RhbmNlcy97aW5zdGFuY2VJZH0vcHJvdmlkZXJzL0ZvdW5kYXRpb25hTExNLlZlY3Rvcml6YXRpb24vaW5kZXhpbmdwcm9maWxlcy97bmFtZX0=/V/MjAyNC0wMi0xNg=="/>
       <argGroup name="">
         <arg type="string" var="$Path.instanceId" options="instance-id" required="True"/>
         <arg type="string" var="$Path.name" options="name" required="True"/>
@@ -91,7 +91,7 @@
       </operation>
     </command>
     <command name="upsert" version="2024-02-16">
-      <resource id="/instances/{}/providers/foundationallm.vectorization/indexingprofiles/{}" version="2024-02-16" swagger="fllm-plane/fllm/ResourceProviders/FoundationaLLM.Agent/Paths/L2luc3RhbmNlcy97aW5zdGFuY2VJZH0vcHJvdmlkZXJzL0ZvdW5kYXRpb25hTExNLlZlY3Rvcml6YXRpb24vaW5kZXhpbmdwcm9maWxlcy97bmFtZX0=/V/MjAyNC0wMi0xNg=="/>
+      <resource id="/instances/{}/providers/foundationallm.vectorization/indexingprofiles/{}" version="2024-02-16" swagger="fllm-plane/fllm/ResourceProviders/FoundationaLLM.Vectorization/Paths/L2luc3RhbmNlcy97aW5zdGFuY2VJZH0vcHJvdmlkZXJzL0ZvdW5kYXRpb25hTExNLlZlY3Rvcml6YXRpb24vaW5kZXhpbmdwcm9maWxlcy97bmFtZX0=/V/MjAyNC0wMi0xNg=="/>
       <argGroup name="">
         <arg type="string" var="$Path.instanceId" options="instance-id" required="True"/>
         <arg type="string" var="$Path.name" options="name" required="True"/>

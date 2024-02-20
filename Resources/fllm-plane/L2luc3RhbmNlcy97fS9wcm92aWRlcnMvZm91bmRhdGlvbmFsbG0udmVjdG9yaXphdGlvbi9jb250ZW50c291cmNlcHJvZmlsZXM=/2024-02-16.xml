@@ -1,9 +1,9 @@
 <?xml version='1.0' encoding='utf-8'?>
 <CodeGen plane="fllm-plane">
-  <resource id="/instances/{}/providers/foundationallm.vectorization/contentsourceprofiles" version="2024-02-16" swagger="fllm-plane/fllm/ResourceProviders/FoundationaLLM.Agent/Paths/L2luc3RhbmNlcy97aW5zdGFuY2VJZH0vcHJvdmlkZXJzL0ZvdW5kYXRpb25hTExNLlZlY3Rvcml6YXRpb24vY29udGVudHNvdXJjZXByb2ZpbGVz/V/MjAyNC0wMi0xNg=="/>
+  <resource id="/instances/{}/providers/foundationallm.vectorization/contentsourceprofiles" version="2024-02-16" swagger="fllm-plane/fllm/ResourceProviders/FoundationaLLM.Vectorization/Paths/L2luc3RhbmNlcy97aW5zdGFuY2VJZH0vcHJvdmlkZXJzL0ZvdW5kYXRpb25hTExNLlZlY3Rvcml6YXRpb24vY29udGVudHNvdXJjZXByb2ZpbGVz/V/MjAyNC0wMi0xNg=="/>
   <commandGroup name="vectorization contentsourceprofile">
     <command name="list" version="2024-02-16">
-      <resource id="/instances/{}/providers/foundationallm.vectorization/contentsourceprofiles" version="2024-02-16" swagger="fllm-plane/fllm/ResourceProviders/FoundationaLLM.Agent/Paths/L2luc3RhbmNlcy97aW5zdGFuY2VJZH0vcHJvdmlkZXJzL0ZvdW5kYXRpb25hTExNLlZlY3Rvcml6YXRpb24vY29udGVudHNvdXJjZXByb2ZpbGVz/V/MjAyNC0wMi0xNg=="/>
+      <resource id="/instances/{}/providers/foundationallm.vectorization/contentsourceprofiles" version="2024-02-16" swagger="fllm-plane/fllm/ResourceProviders/FoundationaLLM.Vectorization/Paths/L2luc3RhbmNlcy97aW5zdGFuY2VJZH0vcHJvdmlkZXJzL0ZvdW5kYXRpb25hTExNLlZlY3Rvcml6YXRpb24vY29udGVudHNvdXJjZXByb2ZpbGVz/V/MjAyNC0wMi0xNg=="/>
       <argGroup name="">
         <arg type="string" var="$Path.instanceId" options="instance-id" required="True"/>
       </argGroup>
@@ -24,20 +24,20 @@
               <json var="$Instance">
                 <schema type="array<object>">
                   <item type="object">
-                    <prop type="object" name="configurationReferences">
+                    <prop type="object" name="configuration_references">
                       <additionalProp>
                         <item type="string"/>
                       </additionalProp>
                     </prop>
-                    <prop type="integer32" name="contentSource">
+                    <prop type="string" name="content_source">
                       <enum>
-                        <item value="0"/>
-                        <item value="1"/>
-                        <item value="2"/>
+                        <item value="&quot;AzureDataLake&quot;"/>
+                        <item value="&quot;AzureSQLDatabase&quot;"/>
+                        <item value="&quot;SharePointOnline&quot;"/>
                       </enum>
                     </prop>
                     <prop type="string" name="name"/>
-                    <prop type="string" name="objectId"/>
+                    <prop type="string" name="object_id"/>
                     <prop type="object" name="settings">
                       <additionalProp>
                         <item type="string"/>
