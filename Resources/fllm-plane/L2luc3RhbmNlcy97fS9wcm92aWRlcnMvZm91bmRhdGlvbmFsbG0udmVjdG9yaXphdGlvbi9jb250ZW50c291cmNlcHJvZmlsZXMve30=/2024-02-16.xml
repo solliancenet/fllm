@@ -1,15 +1,15 @@
 <?xml version='1.0' encoding='utf-8'?>
 <CodeGen plane="fllm-plane">
-  <resource id="/instances/{}/providers/foundationallm.vectorization/contentsourceprofiles/{}" version="2024-02-16" swagger="fllm-plane/fllm/ResourceProviders/FoundationaLLM.Vectorization/Paths/L2luc3RhbmNlcy97aW5zdGFuY2VJZH0vcHJvdmlkZXJzL0ZvdW5kYXRpb25hTExNLlZlY3Rvcml6YXRpb24vY29udGVudHNvdXJjZXByb2ZpbGVzL3tuYW1lfQ==/V/MjAyNC0wMi0xNg=="/>
+  <resource id="/instances/{}/providers/foundationallm.vectorization/contentsourceprofiles/{}" version="2024-02-16" swagger="fllm-plane/fllm/ResourceProviders/FoundationaLLM.Agent/Paths/L2luc3RhbmNlcy97aW5zdGFuY2VJZH0vcHJvdmlkZXJzL0ZvdW5kYXRpb25hTExNLlZlY3Rvcml6YXRpb24vY29udGVudFNvdXJjZVByb2ZpbGVzL3tuYW1lfQ==/V/MjAyNC0wMi0xNg=="/>
   <commandGroup name="vectorization contentsourceprofile">
     <command name="show" version="2024-02-16">
-      <resource id="/instances/{}/providers/foundationallm.vectorization/contentsourceprofiles/{}" version="2024-02-16" swagger="fllm-plane/fllm/ResourceProviders/FoundationaLLM.Vectorization/Paths/L2luc3RhbmNlcy97aW5zdGFuY2VJZH0vcHJvdmlkZXJzL0ZvdW5kYXRpb25hTExNLlZlY3Rvcml6YXRpb24vY29udGVudHNvdXJjZXByb2ZpbGVzL3tuYW1lfQ==/V/MjAyNC0wMi0xNg=="/>
+      <resource id="/instances/{}/providers/foundationallm.vectorization/contentsourceprofiles/{}" version="2024-02-16" swagger="fllm-plane/fllm/ResourceProviders/FoundationaLLM.Agent/Paths/L2luc3RhbmNlcy97aW5zdGFuY2VJZH0vcHJvdmlkZXJzL0ZvdW5kYXRpb25hTExNLlZlY3Rvcml6YXRpb24vY29udGVudFNvdXJjZVByb2ZpbGVzL3tuYW1lfQ==/V/MjAyNC0wMi0xNg=="/>
       <argGroup name="">
         <arg type="string" var="$Path.instanceId" options="instance-id" required="True"/>
         <arg type="string" var="$Path.name" options="name" required="True"/>
       </argGroup>
-      <operation operationId="contentsourceprofiles_Get">
-        <http path="/instances/{instanceId}/providers/FoundationaLLM.Vectorization/contentsourceprofiles/{name}">
+      <operation operationId="contentSourceProfiles_Get">
+        <http path="/instances/{instanceId}/providers/FoundationaLLM.Vectorization/contentSourceProfiles/{name}">
           <request method="get">
             <path>
               <param type="string" name="instanceId" arg="$Path.instanceId" required="True"/>
@@ -36,8 +36,14 @@
                         <item value="&quot;AzureDataLake&quot;"/>
                         <item value="&quot;AzureSQLDatabase&quot;"/>
                         <item value="&quot;SharePointOnline&quot;"/>
+                        <item value="&quot;Web&quot;"/>
                       </enum>
                     </prop>
+                    <prop type="string" name="created_by"/>
+                    <prop type="object" name="created_on"/>
+                    <prop type="boolean" name="deleted"/>
+                    <prop type="string" name="description"/>
+                    <prop type="string" name="display_name"/>
                     <prop type="string" name="name"/>
                     <prop type="string" name="object_id"/>
                     <prop type="object" name="settings">
@@ -46,6 +52,8 @@
                       </additionalProp>
                     </prop>
                     <prop type="string" name="type"/>
+                    <prop type="string" name="updated_by"/>
+                    <prop type="object" name="updated_on"/>
                   </item>
                 </schema>
               </json>
@@ -63,13 +71,13 @@
       <output type="array" ref="$Instance" clientFlatten="True"/>
     </command>
     <command name="delete" version="2024-02-16" confirmation="Are you sure you want to perform this operation?">
-      <resource id="/instances/{}/providers/foundationallm.vectorization/contentsourceprofiles/{}" version="2024-02-16" swagger="fllm-plane/fllm/ResourceProviders/FoundationaLLM.Vectorization/Paths/L2luc3RhbmNlcy97aW5zdGFuY2VJZH0vcHJvdmlkZXJzL0ZvdW5kYXRpb25hTExNLlZlY3Rvcml6YXRpb24vY29udGVudHNvdXJjZXByb2ZpbGVzL3tuYW1lfQ==/V/MjAyNC0wMi0xNg=="/>
+      <resource id="/instances/{}/providers/foundationallm.vectorization/contentsourceprofiles/{}" version="2024-02-16" swagger="fllm-plane/fllm/ResourceProviders/FoundationaLLM.Agent/Paths/L2luc3RhbmNlcy97aW5zdGFuY2VJZH0vcHJvdmlkZXJzL0ZvdW5kYXRpb25hTExNLlZlY3Rvcml6YXRpb24vY29udGVudFNvdXJjZVByb2ZpbGVzL3tuYW1lfQ==/V/MjAyNC0wMi0xNg=="/>
       <argGroup name="">
         <arg type="string" var="$Path.instanceId" options="instance-id" required="True"/>
         <arg type="string" var="$Path.name" options="name" required="True"/>
       </argGroup>
-      <operation operationId="contentsourceprofiles_Delete">
-        <http path="/instances/{instanceId}/providers/FoundationaLLM.Vectorization/contentsourceprofiles/{name}">
+      <operation operationId="contentSourceProfiles_Delete">
+        <http path="/instances/{instanceId}/providers/FoundationaLLM.Vectorization/contentSourceProfiles/{name}">
           <request method="delete">
             <path>
               <param type="string" name="instanceId" arg="$Path.instanceId" required="True"/>
@@ -93,7 +101,7 @@
       </operation>
     </command>
     <command name="upsert" version="2024-02-16">
-      <resource id="/instances/{}/providers/foundationallm.vectorization/contentsourceprofiles/{}" version="2024-02-16" swagger="fllm-plane/fllm/ResourceProviders/FoundationaLLM.Vectorization/Paths/L2luc3RhbmNlcy97aW5zdGFuY2VJZH0vcHJvdmlkZXJzL0ZvdW5kYXRpb25hTExNLlZlY3Rvcml6YXRpb24vY29udGVudHNvdXJjZXByb2ZpbGVzL3tuYW1lfQ==/V/MjAyNC0wMi0xNg=="/>
+      <resource id="/instances/{}/providers/foundationallm.vectorization/contentsourceprofiles/{}" version="2024-02-16" swagger="fllm-plane/fllm/ResourceProviders/FoundationaLLM.Agent/Paths/L2luc3RhbmNlcy97aW5zdGFuY2VJZH0vcHJvdmlkZXJzL0ZvdW5kYXRpb25hTExNLlZlY3Rvcml6YXRpb24vY29udGVudFNvdXJjZVByb2ZpbGVzL3tuYW1lfQ==/V/MjAyNC0wMi0xNg=="/>
       <argGroup name="">
         <arg type="string" var="$Path.instanceId" options="instance-id" required="True"/>
         <arg type="string" var="$Path.name" options="name" required="True"/>
@@ -101,6 +109,7 @@
           <blank value="{}"/>
           <help short="ContentSourceProfile"/>
           <arg type="object" var="$body.configuration_references" options="configuration-references">
+            <help short="configuration_references"/>
             <additionalProp>
               <item type="string"/>
             </additionalProp>
@@ -111,20 +120,51 @@
               <item name="AzureDataLake" value="&quot;AzureDataLake&quot;"/>
               <item name="AzureSQLDatabase" value="&quot;AzureSQLDatabase&quot;"/>
               <item name="SharePointOnline" value="&quot;SharePointOnline&quot;"/>
+              <item name="Web" value="&quot;Web&quot;"/>
             </enum>
           </arg>
-          <arg type="string" var="$body.name" options="name"/>
-          <arg type="string" var="$body.object_id" options="object-id"/>
+          <arg type="string" var="$body.created_by" options="created-by">
+            <help short="created_by"/>
+          </arg>
+          <arg type="object" var="$body.created_on" options="created-on">
+            <blank value="{}"/>
+            <help short="created_on"/>
+          </arg>
+          <arg type="boolean" var="$body.deleted" options="deleted">
+            <help short="deleted"/>
+          </arg>
+          <arg type="string" var="$body.description" options="description">
+            <help short="description"/>
+          </arg>
+          <arg type="string" var="$body.display_name" options="display-name">
+            <help short="display_name"/>
+          </arg>
+          <arg type="string" var="$body.name" options="name">
+            <help short="name"/>
+          </arg>
+          <arg type="string" var="$body.object_id" options="object-id">
+            <help short="object_id"/>
+          </arg>
           <arg type="object" var="$body.settings" options="settings">
+            <help short="settings"/>
             <additionalProp>
               <item type="string"/>
             </additionalProp>
           </arg>
-          <arg type="string" var="$body.type" options="type"/>
+          <arg type="string" var="$body.type" options="type">
+            <help short="type"/>
+          </arg>
+          <arg type="string" var="$body.updated_by" options="updated-by">
+            <help short="updated_by"/>
+          </arg>
+          <arg type="object" var="$body.updated_on" options="updated-on">
+            <blank value="{}"/>
+            <help short="updated_on"/>
+          </arg>
         </arg>
       </argGroup>
-      <operation operationId="contentsourceprofiles_Upsert">
-        <http path="/instances/{instanceId}/providers/FoundationaLLM.Vectorization/contentsourceprofiles/{name}">
+      <operation operationId="contentSourceProfiles_Upsert">
+        <http path="/instances/{instanceId}/providers/FoundationaLLM.Vectorization/contentSourceProfiles/{name}">
           <request method="post">
             <path>
               <param type="string" name="instanceId" arg="$Path.instanceId" required="True"/>
@@ -148,8 +188,14 @@
                       <item value="&quot;AzureDataLake&quot;"/>
                       <item value="&quot;AzureSQLDatabase&quot;"/>
                       <item value="&quot;SharePointOnline&quot;"/>
+                      <item value="&quot;Web&quot;"/>
                     </enum>
                   </prop>
+                  <prop type="string" name="created_by" arg="$body.created_by"/>
+                  <prop type="object" name="created_on" arg="$body.created_on"/>
+                  <prop type="boolean" name="deleted" arg="$body.deleted"/>
+                  <prop type="string" name="description" arg="$body.description"/>
+                  <prop type="string" name="display_name" arg="$body.display_name"/>
                   <prop type="string" name="name" arg="$body.name"/>
                   <prop type="string" name="object_id" arg="$body.object_id"/>
                   <prop type="object" name="settings" arg="$body.settings">
@@ -158,6 +204,8 @@
                     </additionalProp>
                   </prop>
                   <prop type="string" name="type" arg="$body.type"/>
+                  <prop type="string" name="updated_by" arg="$body.updated_by"/>
+                  <prop type="object" name="updated_on" arg="$body.updated_on"/>
                 </schema>
               </json>
             </body>

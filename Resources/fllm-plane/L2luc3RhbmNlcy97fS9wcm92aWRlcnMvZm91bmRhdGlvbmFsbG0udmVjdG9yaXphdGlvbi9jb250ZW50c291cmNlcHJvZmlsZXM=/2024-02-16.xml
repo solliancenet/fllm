@@ -1,14 +1,14 @@
 <?xml version='1.0' encoding='utf-8'?>
 <CodeGen plane="fllm-plane">
-  <resource id="/instances/{}/providers/foundationallm.vectorization/contentsourceprofiles" version="2024-02-16" swagger="fllm-plane/fllm/ResourceProviders/FoundationaLLM.Vectorization/Paths/L2luc3RhbmNlcy97aW5zdGFuY2VJZH0vcHJvdmlkZXJzL0ZvdW5kYXRpb25hTExNLlZlY3Rvcml6YXRpb24vY29udGVudHNvdXJjZXByb2ZpbGVz/V/MjAyNC0wMi0xNg=="/>
+  <resource id="/instances/{}/providers/foundationallm.vectorization/contentsourceprofiles" version="2024-02-16" swagger="fllm-plane/fllm/ResourceProviders/FoundationaLLM.Agent/Paths/L2luc3RhbmNlcy97aW5zdGFuY2VJZH0vcHJvdmlkZXJzL0ZvdW5kYXRpb25hTExNLlZlY3Rvcml6YXRpb24vY29udGVudFNvdXJjZVByb2ZpbGVz/V/MjAyNC0wMi0xNg=="/>
   <commandGroup name="vectorization contentsourceprofile">
     <command name="list" version="2024-02-16">
-      <resource id="/instances/{}/providers/foundationallm.vectorization/contentsourceprofiles" version="2024-02-16" swagger="fllm-plane/fllm/ResourceProviders/FoundationaLLM.Vectorization/Paths/L2luc3RhbmNlcy97aW5zdGFuY2VJZH0vcHJvdmlkZXJzL0ZvdW5kYXRpb25hTExNLlZlY3Rvcml6YXRpb24vY29udGVudHNvdXJjZXByb2ZpbGVz/V/MjAyNC0wMi0xNg=="/>
+      <resource id="/instances/{}/providers/foundationallm.vectorization/contentsourceprofiles" version="2024-02-16" swagger="fllm-plane/fllm/ResourceProviders/FoundationaLLM.Agent/Paths/L2luc3RhbmNlcy97aW5zdGFuY2VJZH0vcHJvdmlkZXJzL0ZvdW5kYXRpb25hTExNLlZlY3Rvcml6YXRpb24vY29udGVudFNvdXJjZVByb2ZpbGVz/V/MjAyNC0wMi0xNg=="/>
       <argGroup name="">
         <arg type="string" var="$Path.instanceId" options="instance-id" required="True"/>
       </argGroup>
-      <operation operationId="contentsourceprofiles_List">
-        <http path="/instances/{instanceId}/providers/FoundationaLLM.Vectorization/contentsourceprofiles">
+      <operation operationId="contentSourceProfiles_List">
+        <http path="/instances/{instanceId}/providers/FoundationaLLM.Vectorization/contentSourceProfiles">
           <request method="get">
             <path>
               <param type="string" name="instanceId" arg="$Path.instanceId" required="True"/>
@@ -34,8 +34,14 @@
                         <item value="&quot;AzureDataLake&quot;"/>
                         <item value="&quot;AzureSQLDatabase&quot;"/>
                         <item value="&quot;SharePointOnline&quot;"/>
+                        <item value="&quot;Web&quot;"/>
                       </enum>
                     </prop>
+                    <prop type="string" name="created_by"/>
+                    <prop type="object" name="created_on"/>
+                    <prop type="boolean" name="deleted"/>
+                    <prop type="string" name="description"/>
+                    <prop type="string" name="display_name"/>
                     <prop type="string" name="name"/>
                     <prop type="string" name="object_id"/>
                     <prop type="object" name="settings">
@@ -44,6 +50,8 @@
                       </additionalProp>
                     </prop>
                     <prop type="string" name="type"/>
+                    <prop type="string" name="updated_by"/>
+                    <prop type="object" name="updated_on"/>
                   </item>
                 </schema>
               </json>

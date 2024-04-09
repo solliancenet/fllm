@@ -24,42 +24,64 @@
           <response statusCode="200">
             <body>
               <json var="$Instance">
-                <schema type="array<object>">
-                  <item type="object">
-                    <prop type="object" name="conversation_history">
-                      <prop type="boolean" name="enabled"/>
-                      <prop type="integer" name="max_history">
-                        <default value="0"/>
-                      </prop>
+                <schema type="object">
+                  <prop type="string" name="content_source_profile_object_id"/>
+                  <prop type="object" name="conversation_history">
+                    <prop type="boolean" name="enabled"/>
+                    <prop type="integer" name="max_history">
+                      <default value="0"/>
                     </prop>
-                    <prop type="string" name="description"/>
-                    <prop type="object" name="gatekeeper">
-                      <prop type="array<string>" name="options">
-                        <item type="string"/>
-                      </prop>
-                      <prop type="boolean" name="use_system_setting"/>
+                  </prop>
+                  <prop type="string" name="created_by"/>
+                  <prop type="object" name="created_on"/>
+                  <prop type="boolean" name="deleted"/>
+                  <prop type="string" name="description"/>
+                  <prop type="string" name="display_name"/>
+                  <prop type="object" name="gatekeeper">
+                    <prop type="array<string>" name="options">
+                      <item type="string"/>
                     </prop>
-                    <prop type="string" name="indexing_profile_object_id"/>
-                    <prop type="object" name="language_model">
-                      <prop type="string" name="api_endpoint"/>
-                      <prop type="string" name="api_key"/>
-                      <prop type="string" name="api_version"/>
-                      <prop type="string" name="deployment"/>
-                      <prop type="string" name="provider"/>
-                      <prop type="float" name="temperature"/>
-                      <prop type="string" name="type"/>
-                      <prop type="boolean" name="use_chat"/>
-                      <prop type="string" name="version"/>
-                    </prop>
-                    <prop type="string" name="name"/>
-                    <prop type="string" name="object_id"/>
-                    <prop type="string" name="orchestrator"/>
-                    <prop type="string" name="prompt_object_id"/>
-                    <prop type="boolean" name="sessions_enabled"/>
-                    <prop type="string" name="text_embedding_profile_object_id"/>
-                    <prop type="string" name="text_partitioning_profile_object_id"/>
+                    <prop type="boolean" name="use_system_setting"/>
+                  </prop>
+                  <prop type="string" name="indexing_profile_object_id"/>
+                  <prop type="object" name="language_model">
+                    <prop type="string" name="api_endpoint"/>
+                    <prop type="string" name="api_key"/>
+                    <prop type="string" name="api_version"/>
+                    <prop type="string" name="deployment"/>
+                    <prop type="string" name="provider"/>
+                    <prop type="float" name="temperature"/>
                     <prop type="string" name="type"/>
-                  </item>
+                    <prop type="boolean" name="use_chat"/>
+                    <prop type="string" name="version"/>
+                  </prop>
+                  <prop type="string" name="name"/>
+                  <prop type="string" name="object_id"/>
+                  <prop type="object" name="orchestration_settings">
+                    <prop type="object" name="agent_parameters">
+                      <additionalProp>
+                        <item type="string"/>
+                      </additionalProp>
+                    </prop>
+                    <prop type="object" name="endpoint_configuration">
+                      <additionalProp>
+                        <item type="string"/>
+                      </additionalProp>
+                    </prop>
+                    <prop type="object" name="model_parameters">
+                      <additionalProp>
+                        <item type="string"/>
+                      </additionalProp>
+                    </prop>
+                    <prop type="string" name="orchestrator"/>
+                  </prop>
+                  <prop type="string" name="prompt_object_id"/>
+                  <prop type="boolean" name="sessions_enabled"/>
+                  <prop type="string" name="text_embedding_profile_object_id"/>
+                  <prop type="string" name="text_partitioning_profile_object_id"/>
+                  <prop type="string" name="type"/>
+                  <prop type="string" name="updated_by"/>
+                  <prop type="object" name="updated_on"/>
                 </schema>
               </json>
             </body>
@@ -73,7 +95,7 @@
           </response>
         </http>
       </operation>
-      <output type="array" ref="$Instance" clientFlatten="True"/>
+      <output type="object" ref="$Instance" clientFlatten="True"/>
     </command>
     <command name="delete" version="2024-02-16" confirmation="Are you sure you want to perform this operation?">
       <resource id="/instances/{}/providers/foundationallm.agent/agents/{}" version="2024-02-16" swagger="fllm-plane/fllm/ResourceProviders/FoundationaLLM.Agent/Paths/L2luc3RhbmNlcy97aW5zdGFuY2VJZH0vcHJvdmlkZXJzL0ZvdW5kYXRpb25hTExNLkFnZW50L2FnZW50cy97bmFtZX0=/V/MjAyNC0wMi0xNg=="/>
@@ -113,42 +135,130 @@
         <arg type="object" var="$body" options="body">
           <blank value="{}"/>
           <help short="KnowledgeManagementAgent"/>
+          <arg type="string" var="$body.content_source_profile_object_id" options="content-source-profile-object-id">
+            <help short="content_source_profile_object_id"/>
+          </arg>
           <arg type="object" var="$body.conversation_history" options="conversation-history">
             <help short="ConversationHistory"/>
-            <arg type="boolean" var="$body.conversation_history.enabled" options="enabled"/>
+            <arg type="boolean" var="$body.conversation_history.enabled" options="enabled">
+              <help short="enabled"/>
+            </arg>
             <arg type="integer" var="$body.conversation_history.max_history" options="max-history">
+              <help short="max_history"/>
               <default value="0"/>
             </arg>
           </arg>
-          <arg type="string" var="$body.description" options="description"/>
+          <arg type="string" var="$body.created_by" options="created-by">
+            <help short="created_by"/>
+          </arg>
+          <arg type="object" var="$body.created_on" options="created-on">
+            <blank value="{}"/>
+            <help short="created_on"/>
+          </arg>
+          <arg type="boolean" var="$body.deleted" options="deleted">
+            <help short="deleted"/>
+          </arg>
+          <arg type="string" var="$body.description" options="description">
+            <help short="description"/>
+          </arg>
+          <arg type="string" var="$body.display_name" options="display-name">
+            <help short="display_name"/>
+          </arg>
           <arg type="object" var="$body.gatekeeper" options="gatekeeper">
             <help short="Gatekeeper"/>
             <arg type="array<string>" var="$body.gatekeeper.options" options="options">
+              <help short="options"/>
               <item type="string"/>
             </arg>
-            <arg type="boolean" var="$body.gatekeeper.use_system_setting" options="use-system-setting"/>
+            <arg type="boolean" var="$body.gatekeeper.use_system_setting" options="use-system-setting">
+              <help short="use_system_setting"/>
+            </arg>
           </arg>
-          <arg type="string" var="$body.indexing_profile_object_id" options="indexing-profile-object-id"/>
+          <arg type="string" var="$body.indexing_profile_object_id" options="indexing-profile-object-id">
+            <help short="indexing_profile_object_id"/>
+          </arg>
           <arg type="object" var="$body.language_model" options="language-model">
             <help short="LanguageModel"/>
-            <arg type="string" var="$body.language_model.api_endpoint" options="api-endpoint"/>
-            <arg type="string" var="$body.language_model.api_key" options="api-key"/>
-            <arg type="string" var="$body.language_model.api_version" options="api-version"/>
-            <arg type="string" var="$body.language_model.deployment" options="deployment"/>
-            <arg type="string" var="$body.language_model.provider" options="provider"/>
-            <arg type="float" var="$body.language_model.temperature" options="temperature"/>
-            <arg type="string" var="$body.language_model.type" options="type"/>
-            <arg type="boolean" var="$body.language_model.use_chat" options="use-chat"/>
-            <arg type="string" var="$body.language_model.version" options="version"/>
+            <arg type="string" var="$body.language_model.api_endpoint" options="api-endpoint">
+              <help short="api_endpoint"/>
+            </arg>
+            <arg type="string" var="$body.language_model.api_key" options="api-key">
+              <help short="api_key"/>
+            </arg>
+            <arg type="string" var="$body.language_model.api_version" options="api-version">
+              <help short="api_version"/>
+            </arg>
+            <arg type="string" var="$body.language_model.deployment" options="deployment">
+              <help short="deployment"/>
+            </arg>
+            <arg type="string" var="$body.language_model.provider" options="provider">
+              <help short="provider"/>
+            </arg>
+            <arg type="float" var="$body.language_model.temperature" options="temperature">
+              <help short="temperature"/>
+            </arg>
+            <arg type="string" var="$body.language_model.type" options="type">
+              <help short="type"/>
+            </arg>
+            <arg type="boolean" var="$body.language_model.use_chat" options="use-chat">
+              <help short="use_chat"/>
+            </arg>
+            <arg type="string" var="$body.language_model.version" options="version">
+              <help short="version"/>
+            </arg>
           </arg>
-          <arg type="string" var="$body.name" options="name"/>
-          <arg type="string" var="$body.object_id" options="object-id"/>
-          <arg type="string" var="$body.orchestrator" options="orchestrator"/>
-          <arg type="string" var="$body.prompt_object_id" options="prompt-object-id"/>
-          <arg type="boolean" var="$body.sessions_enabled" options="sessions-enabled"/>
-          <arg type="string" var="$body.text_embedding_profile_object_id" options="text-embedding-profile-object-id"/>
-          <arg type="string" var="$body.text_partitioning_profile_object_id" options="text-partitioning-profile-object-id"/>
-          <arg type="string" var="$body.type" options="type"/>
+          <arg type="string" var="$body.name" options="name">
+            <help short="name"/>
+          </arg>
+          <arg type="string" var="$body.object_id" options="object-id">
+            <help short="object_id"/>
+          </arg>
+          <arg type="object" var="$body.orchestration_settings" options="orchestration-settings">
+            <help short="OrchestrationSettings"/>
+            <arg type="object" var="$body.orchestration_settings.agent_parameters" options="agent-parameters">
+              <help short="agent_parameters"/>
+              <additionalProp>
+                <item type="string"/>
+              </additionalProp>
+            </arg>
+            <arg type="object" var="$body.orchestration_settings.endpoint_configuration" options="endpoint-configuration">
+              <help short="endpoint_configuration"/>
+              <additionalProp>
+                <item type="string"/>
+              </additionalProp>
+            </arg>
+            <arg type="object" var="$body.orchestration_settings.model_parameters" options="model-parameters">
+              <help short="model_parameters"/>
+              <additionalProp>
+                <item type="string"/>
+              </additionalProp>
+            </arg>
+            <arg type="string" var="$body.orchestration_settings.orchestrator" options="orchestrator">
+              <help short="orchestrator"/>
+            </arg>
+          </arg>
+          <arg type="string" var="$body.prompt_object_id" options="prompt-object-id">
+            <help short="prompt_object_id"/>
+          </arg>
+          <arg type="boolean" var="$body.sessions_enabled" options="sessions-enabled">
+            <help short="sessions_enabled"/>
+          </arg>
+          <arg type="string" var="$body.text_embedding_profile_object_id" options="text-embedding-profile-object-id">
+            <help short="text_embedding_profile_object_id"/>
+          </arg>
+          <arg type="string" var="$body.text_partitioning_profile_object_id" options="text-partitioning-profile-object-id">
+            <help short="text_partitioning_profile_object_id"/>
+          </arg>
+          <arg type="string" var="$body.type" options="type">
+            <help short="type"/>
+          </arg>
+          <arg type="string" var="$body.updated_by" options="updated-by">
+            <help short="updated_by"/>
+          </arg>
+          <arg type="object" var="$body.updated_on" options="updated-on">
+            <blank value="{}"/>
+            <help short="updated_on"/>
+          </arg>
         </arg>
       </argGroup>
       <operation operationId="agents_Upsert">
@@ -166,13 +276,18 @@
             <body>
               <json>
                 <schema type="object" name="body" arg="$body" clientFlatten="True">
+                  <prop type="string" name="content_source_profile_object_id" arg="$body.content_source_profile_object_id"/>
                   <prop type="object" name="conversation_history" arg="$body.conversation_history">
                     <prop type="boolean" name="enabled" arg="$body.conversation_history.enabled"/>
                     <prop type="integer" name="max_history" arg="$body.conversation_history.max_history">
                       <default value="0"/>
                     </prop>
                   </prop>
+                  <prop type="string" name="created_by" arg="$body.created_by"/>
+                  <prop type="object" name="created_on" arg="$body.created_on"/>
+                  <prop type="boolean" name="deleted" arg="$body.deleted"/>
                   <prop type="string" name="description" arg="$body.description"/>
+                  <prop type="string" name="display_name" arg="$body.display_name"/>
                   <prop type="object" name="gatekeeper" arg="$body.gatekeeper">
                     <prop type="array<string>" name="options" arg="$body.gatekeeper.options">
                       <item type="string"/>
@@ -193,12 +308,31 @@
                   </prop>
                   <prop type="string" name="name" arg="$body.name"/>
                   <prop type="string" name="object_id" arg="$body.object_id"/>
-                  <prop type="string" name="orchestrator" arg="$body.orchestrator"/>
+                  <prop type="object" name="orchestration_settings" arg="$body.orchestration_settings">
+                    <prop type="object" name="agent_parameters" arg="$body.orchestration_settings.agent_parameters">
+                      <additionalProp>
+                        <item type="string"/>
+                      </additionalProp>
+                    </prop>
+                    <prop type="object" name="endpoint_configuration" arg="$body.orchestration_settings.endpoint_configuration">
+                      <additionalProp>
+                        <item type="string"/>
+                      </additionalProp>
+                    </prop>
+                    <prop type="object" name="model_parameters" arg="$body.orchestration_settings.model_parameters">
+                      <additionalProp>
+                        <item type="string"/>
+                      </additionalProp>
+                    </prop>
+                    <prop type="string" name="orchestrator" arg="$body.orchestration_settings.orchestrator"/>
+                  </prop>
                   <prop type="string" name="prompt_object_id" arg="$body.prompt_object_id"/>
                   <prop type="boolean" name="sessions_enabled" arg="$body.sessions_enabled"/>
                   <prop type="string" name="text_embedding_profile_object_id" arg="$body.text_embedding_profile_object_id"/>
                   <prop type="string" name="text_partitioning_profile_object_id" arg="$body.text_partitioning_profile_object_id"/>
                   <prop type="string" name="type" arg="$body.type"/>
+                  <prop type="string" name="updated_by" arg="$body.updated_by"/>
+                  <prop type="object" name="updated_on" arg="$body.updated_on"/>
                 </schema>
               </json>
             </body>

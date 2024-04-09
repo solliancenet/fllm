@@ -26,12 +26,18 @@
               <json var="$Instance">
                 <schema type="array<object>">
                   <item type="object">
+                    <prop type="string" name="created_by"/>
+                    <prop type="object" name="created_on"/>
+                    <prop type="boolean" name="deleted"/>
                     <prop type="string" name="description"/>
+                    <prop type="string" name="display_name"/>
                     <prop type="string" name="name"/>
                     <prop type="string" name="object_id"/>
                     <prop type="string" name="prefix"/>
                     <prop type="string" name="suffix"/>
                     <prop type="string" name="type"/>
+                    <prop type="string" name="updated_by"/>
+                    <prop type="object" name="updated_on"/>
                   </item>
                 </schema>
               </json>
@@ -86,12 +92,44 @@
         <arg type="object" var="$body" options="body">
           <blank value="{}"/>
           <help short="MultipartPrompt"/>
-          <arg type="string" var="$body.description" options="description"/>
-          <arg type="string" var="$body.name" options="name"/>
-          <arg type="string" var="$body.object_id" options="object-id"/>
-          <arg type="string" var="$body.prefix" options="prefix"/>
-          <arg type="string" var="$body.suffix" options="suffix"/>
-          <arg type="string" var="$body.type" options="type"/>
+          <arg type="string" var="$body.created_by" options="created-by">
+            <help short="created_by"/>
+          </arg>
+          <arg type="object" var="$body.created_on" options="created-on">
+            <blank value="{}"/>
+            <help short="created_on"/>
+          </arg>
+          <arg type="boolean" var="$body.deleted" options="deleted">
+            <help short="deleted"/>
+          </arg>
+          <arg type="string" var="$body.description" options="description">
+            <help short="description"/>
+          </arg>
+          <arg type="string" var="$body.display_name" options="display-name">
+            <help short="display_name"/>
+          </arg>
+          <arg type="string" var="$body.name" options="name">
+            <help short="name"/>
+          </arg>
+          <arg type="string" var="$body.object_id" options="object-id">
+            <help short="object_id"/>
+          </arg>
+          <arg type="string" var="$body.prefix" options="prefix">
+            <help short="prefix"/>
+          </arg>
+          <arg type="string" var="$body.suffix" options="suffix">
+            <help short="suffix"/>
+          </arg>
+          <arg type="string" var="$body.type" options="type">
+            <help short="type"/>
+          </arg>
+          <arg type="string" var="$body.updated_by" options="updated-by">
+            <help short="updated_by"/>
+          </arg>
+          <arg type="object" var="$body.updated_on" options="updated-on">
+            <blank value="{}"/>
+            <help short="updated_on"/>
+          </arg>
         </arg>
       </argGroup>
       <operation operationId="prompts_Upsert">
@@ -109,12 +147,18 @@
             <body>
               <json>
                 <schema type="object" name="body" arg="$body" clientFlatten="True">
+                  <prop type="string" name="created_by" arg="$body.created_by"/>
+                  <prop type="object" name="created_on" arg="$body.created_on"/>
+                  <prop type="boolean" name="deleted" arg="$body.deleted"/>
                   <prop type="string" name="description" arg="$body.description"/>
+                  <prop type="string" name="display_name" arg="$body.display_name"/>
                   <prop type="string" name="name" arg="$body.name"/>
                   <prop type="string" name="object_id" arg="$body.object_id"/>
                   <prop type="string" name="prefix" arg="$body.prefix"/>
                   <prop type="string" name="suffix" arg="$body.suffix"/>
                   <prop type="string" name="type" arg="$body.type"/>
+                  <prop type="string" name="updated_by" arg="$body.updated_by"/>
+                  <prop type="object" name="updated_on" arg="$body.updated_on"/>
                 </schema>
               </json>
             </body>

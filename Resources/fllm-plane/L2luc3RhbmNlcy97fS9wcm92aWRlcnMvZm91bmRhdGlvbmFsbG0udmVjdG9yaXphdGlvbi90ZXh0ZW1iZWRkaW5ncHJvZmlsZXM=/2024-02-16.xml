@@ -1,14 +1,14 @@
 <?xml version='1.0' encoding='utf-8'?>
 <CodeGen plane="fllm-plane">
-  <resource id="/instances/{}/providers/foundationallm.vectorization/textembeddingprofiles" version="2024-02-16" swagger="fllm-plane/fllm/ResourceProviders/FoundationaLLM.Vectorization/Paths/L2luc3RhbmNlcy97aW5zdGFuY2VJZH0vcHJvdmlkZXJzL0ZvdW5kYXRpb25hTExNLlZlY3Rvcml6YXRpb24vdGV4dGVtYmVkZGluZ3Byb2ZpbGVz/V/MjAyNC0wMi0xNg=="/>
+  <resource id="/instances/{}/providers/foundationallm.vectorization/textembeddingprofiles" version="2024-02-16" swagger="fllm-plane/fllm/ResourceProviders/FoundationaLLM.Agent/Paths/L2luc3RhbmNlcy97aW5zdGFuY2VJZH0vcHJvdmlkZXJzL0ZvdW5kYXRpb25hTExNLlZlY3Rvcml6YXRpb24vdGV4dEVtYmVkZGluZ1Byb2ZpbGVz/V/MjAyNC0wMi0xNg=="/>
   <commandGroup name="vectorization textembeddingprofile">
     <command name="list" version="2024-02-16">
-      <resource id="/instances/{}/providers/foundationallm.vectorization/textembeddingprofiles" version="2024-02-16" swagger="fllm-plane/fllm/ResourceProviders/FoundationaLLM.Vectorization/Paths/L2luc3RhbmNlcy97aW5zdGFuY2VJZH0vcHJvdmlkZXJzL0ZvdW5kYXRpb25hTExNLlZlY3Rvcml6YXRpb24vdGV4dGVtYmVkZGluZ3Byb2ZpbGVz/V/MjAyNC0wMi0xNg=="/>
+      <resource id="/instances/{}/providers/foundationallm.vectorization/textembeddingprofiles" version="2024-02-16" swagger="fllm-plane/fllm/ResourceProviders/FoundationaLLM.Agent/Paths/L2luc3RhbmNlcy97aW5zdGFuY2VJZH0vcHJvdmlkZXJzL0ZvdW5kYXRpb25hTExNLlZlY3Rvcml6YXRpb24vdGV4dEVtYmVkZGluZ1Byb2ZpbGVz/V/MjAyNC0wMi0xNg=="/>
       <argGroup name="">
         <arg type="string" var="$Path.instanceId" options="instance-id" required="True"/>
       </argGroup>
-      <operation operationId="textembeddingprofiles_List">
-        <http path="/instances/{instanceId}/providers/FoundationaLLM.Vectorization/textembeddingprofiles">
+      <operation operationId="textEmbeddingProfiles_List">
+        <http path="/instances/{instanceId}/providers/FoundationaLLM.Vectorization/textEmbeddingProfiles">
           <request method="get">
             <path>
               <param type="string" name="instanceId" arg="$Path.instanceId" required="True"/>
@@ -29,6 +29,11 @@
                         <item type="string"/>
                       </additionalProp>
                     </prop>
+                    <prop type="string" name="created_by"/>
+                    <prop type="object" name="created_on"/>
+                    <prop type="boolean" name="deleted"/>
+                    <prop type="string" name="description"/>
+                    <prop type="string" name="display_name"/>
                     <prop type="string" name="name"/>
                     <prop type="string" name="object_id"/>
                     <prop type="object" name="settings">
@@ -42,6 +47,8 @@
                       </enum>
                     </prop>
                     <prop type="string" name="type"/>
+                    <prop type="string" name="updated_by"/>
+                    <prop type="object" name="updated_on"/>
                   </item>
                 </schema>
               </json>

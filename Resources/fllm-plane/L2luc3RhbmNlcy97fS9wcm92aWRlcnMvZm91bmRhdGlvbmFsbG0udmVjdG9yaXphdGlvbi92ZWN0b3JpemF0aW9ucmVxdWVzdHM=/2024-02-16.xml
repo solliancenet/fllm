@@ -1,14 +1,14 @@
 <?xml version='1.0' encoding='utf-8'?>
 <CodeGen plane="fllm-plane">
-  <resource id="/instances/{}/providers/foundationallm.vectorization/vectorizationrequests" version="2024-02-16" swagger="fllm-plane/fllm/ResourceProviders/FoundationaLLM.Vectorization/Paths/L2luc3RhbmNlcy97aW5zdGFuY2VJZH0vcHJvdmlkZXJzL0ZvdW5kYXRpb25hTExNLlZlY3Rvcml6YXRpb24vdmVjdG9yaXphdGlvbnJlcXVlc3Rz/V/MjAyNC0wMi0xNg=="/>
+  <resource id="/instances/{}/providers/foundationallm.vectorization/vectorizationrequests" version="2024-02-16" swagger="fllm-plane/fllm/ResourceProviders/FoundationaLLM.Agent/Paths/L2luc3RhbmNlcy97aW5zdGFuY2VJZH0vcHJvdmlkZXJzL0ZvdW5kYXRpb25hTExNLlZlY3Rvcml6YXRpb24vdmVjdG9yaXphdGlvblJlcXVlc3Rz/V/MjAyNC0wMi0xNg=="/>
   <commandGroup name="vectorization vectorizationrequest">
     <command name="list" version="2024-02-16">
-      <resource id="/instances/{}/providers/foundationallm.vectorization/vectorizationrequests" version="2024-02-16" swagger="fllm-plane/fllm/ResourceProviders/FoundationaLLM.Vectorization/Paths/L2luc3RhbmNlcy97aW5zdGFuY2VJZH0vcHJvdmlkZXJzL0ZvdW5kYXRpb25hTExNLlZlY3Rvcml6YXRpb24vdmVjdG9yaXphdGlvbnJlcXVlc3Rz/V/MjAyNC0wMi0xNg=="/>
+      <resource id="/instances/{}/providers/foundationallm.vectorization/vectorizationrequests" version="2024-02-16" swagger="fllm-plane/fllm/ResourceProviders/FoundationaLLM.Agent/Paths/L2luc3RhbmNlcy97aW5zdGFuY2VJZH0vcHJvdmlkZXJzL0ZvdW5kYXRpb25hTExNLlZlY3Rvcml6YXRpb24vdmVjdG9yaXphdGlvblJlcXVlc3Rz/V/MjAyNC0wMi0xNg=="/>
       <argGroup name="">
         <arg type="string" var="$Path.instanceId" options="instance-id" required="True"/>
       </argGroup>
-      <operation operationId="vectorizationrequests_List">
-        <http path="/instances/{instanceId}/providers/FoundationaLLM.Vectorization/vectorizationrequests">
+      <operation operationId="vectorizationRequests_List">
+        <http path="/instances/{instanceId}/providers/FoundationaLLM.Vectorization/vectorizationRequests">
           <request method="get">
             <path>
               <param type="string" name="instanceId" arg="$Path.instanceId" required="True"/>
@@ -29,6 +29,11 @@
                     <prop type="object" name="content_identifier">
                       <prop type="string" name="canonical_id"/>
                       <prop type="string" name="content_source_profile_name"/>
+                      <prop type="object" name="metadata">
+                        <additionalProp>
+                          <item type="string"/>
+                        </additionalProp>
+                      </prop>
                       <prop type="string" name="multipart_id"/>
                     </prop>
                     <prop type="string" name="id"/>

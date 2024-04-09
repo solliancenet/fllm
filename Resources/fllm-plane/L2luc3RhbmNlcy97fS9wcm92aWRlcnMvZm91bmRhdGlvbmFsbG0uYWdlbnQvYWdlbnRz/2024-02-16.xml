@@ -30,14 +30,17 @@
                         <default value="0"/>
                       </prop>
                     </prop>
+                    <prop type="string" name="created_by"/>
+                    <prop type="object" name="created_on"/>
+                    <prop type="boolean" name="deleted"/>
                     <prop type="string" name="description"/>
+                    <prop type="string" name="display_name"/>
                     <prop type="object" name="gatekeeper">
                       <prop type="array<string>" name="options">
                         <item type="string"/>
                       </prop>
                       <prop type="boolean" name="use_system_setting"/>
                     </prop>
-                    <prop type="string" name="indexing_profile_object_id"/>
                     <prop type="object" name="language_model">
                       <prop type="string" name="api_endpoint"/>
                       <prop type="string" name="api_key"/>
@@ -51,12 +54,29 @@
                     </prop>
                     <prop type="string" name="name"/>
                     <prop type="string" name="object_id"/>
-                    <prop type="string" name="orchestrator"/>
+                    <prop type="object" name="orchestration_settings">
+                      <prop type="object" name="agent_parameters">
+                        <additionalProp>
+                          <item type="string"/>
+                        </additionalProp>
+                      </prop>
+                      <prop type="object" name="endpoint_configuration">
+                        <additionalProp>
+                          <item type="string"/>
+                        </additionalProp>
+                      </prop>
+                      <prop type="object" name="model_parameters">
+                        <additionalProp>
+                          <item type="string"/>
+                        </additionalProp>
+                      </prop>
+                      <prop type="string" name="orchestrator"/>
+                    </prop>
                     <prop type="string" name="prompt_object_id"/>
                     <prop type="boolean" name="sessions_enabled"/>
-                    <prop type="string" name="text_embedding_profile_object_id"/>
-                    <prop type="string" name="text_partitioning_profile_object_id"/>
                     <prop type="string" name="type"/>
+                    <prop type="string" name="updated_by"/>
+                    <prop type="object" name="updated_on"/>
                   </item>
                 </schema>
               </json>

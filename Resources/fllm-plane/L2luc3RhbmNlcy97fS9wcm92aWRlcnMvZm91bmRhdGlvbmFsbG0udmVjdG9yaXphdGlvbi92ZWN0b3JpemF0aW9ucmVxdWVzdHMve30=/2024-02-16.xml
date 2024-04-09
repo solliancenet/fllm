@@ -1,15 +1,15 @@
 <?xml version='1.0' encoding='utf-8'?>
 <CodeGen plane="fllm-plane">
-  <resource id="/instances/{}/providers/foundationallm.vectorization/vectorizationrequests/{}" version="2024-02-16" swagger="fllm-plane/fllm/ResourceProviders/FoundationaLLM.Vectorization/Paths/L2luc3RhbmNlcy97aW5zdGFuY2VJZH0vcHJvdmlkZXJzL0ZvdW5kYXRpb25hTExNLlZlY3Rvcml6YXRpb24vdmVjdG9yaXphdGlvbnJlcXVlc3RzL3tuYW1lfQ==/V/MjAyNC0wMi0xNg=="/>
+  <resource id="/instances/{}/providers/foundationallm.vectorization/vectorizationrequests/{}" version="2024-02-16" swagger="fllm-plane/fllm/ResourceProviders/FoundationaLLM.Agent/Paths/L2luc3RhbmNlcy97aW5zdGFuY2VJZH0vcHJvdmlkZXJzL0ZvdW5kYXRpb25hTExNLlZlY3Rvcml6YXRpb24vdmVjdG9yaXphdGlvblJlcXVlc3RzL3tuYW1lfQ==/V/MjAyNC0wMi0xNg=="/>
   <commandGroup name="vectorization vectorizationrequest">
     <command name="show" version="2024-02-16">
-      <resource id="/instances/{}/providers/foundationallm.vectorization/vectorizationrequests/{}" version="2024-02-16" swagger="fllm-plane/fllm/ResourceProviders/FoundationaLLM.Vectorization/Paths/L2luc3RhbmNlcy97aW5zdGFuY2VJZH0vcHJvdmlkZXJzL0ZvdW5kYXRpb25hTExNLlZlY3Rvcml6YXRpb24vdmVjdG9yaXphdGlvbnJlcXVlc3RzL3tuYW1lfQ==/V/MjAyNC0wMi0xNg=="/>
+      <resource id="/instances/{}/providers/foundationallm.vectorization/vectorizationrequests/{}" version="2024-02-16" swagger="fllm-plane/fllm/ResourceProviders/FoundationaLLM.Agent/Paths/L2luc3RhbmNlcy97aW5zdGFuY2VJZH0vcHJvdmlkZXJzL0ZvdW5kYXRpb25hTExNLlZlY3Rvcml6YXRpb24vdmVjdG9yaXphdGlvblJlcXVlc3RzL3tuYW1lfQ==/V/MjAyNC0wMi0xNg=="/>
       <argGroup name="">
         <arg type="string" var="$Path.instanceId" options="instance-id" required="True"/>
         <arg type="string" var="$Path.name" options="name" required="True"/>
       </argGroup>
-      <operation operationId="vectorizationrequests_Get">
-        <http path="/instances/{instanceId}/providers/FoundationaLLM.Vectorization/vectorizationrequests/{name}">
+      <operation operationId="vectorizationRequests_Get">
+        <http path="/instances/{instanceId}/providers/FoundationaLLM.Vectorization/vectorizationRequests/{name}">
           <request method="get">
             <path>
               <param type="string" name="instanceId" arg="$Path.instanceId" required="True"/>
@@ -31,6 +31,11 @@
                     <prop type="object" name="content_identifier">
                       <prop type="string" name="canonical_id"/>
                       <prop type="string" name="content_source_profile_name"/>
+                      <prop type="object" name="metadata">
+                        <additionalProp>
+                          <item type="string"/>
+                        </additionalProp>
+                      </prop>
                       <prop type="string" name="multipart_id"/>
                     </prop>
                     <prop type="string" name="id"/>
@@ -69,13 +74,13 @@
       <output type="array" ref="$Instance" clientFlatten="True"/>
     </command>
     <command name="delete" version="2024-02-16" confirmation="Are you sure you want to perform this operation?">
-      <resource id="/instances/{}/providers/foundationallm.vectorization/vectorizationrequests/{}" version="2024-02-16" swagger="fllm-plane/fllm/ResourceProviders/FoundationaLLM.Vectorization/Paths/L2luc3RhbmNlcy97aW5zdGFuY2VJZH0vcHJvdmlkZXJzL0ZvdW5kYXRpb25hTExNLlZlY3Rvcml6YXRpb24vdmVjdG9yaXphdGlvbnJlcXVlc3RzL3tuYW1lfQ==/V/MjAyNC0wMi0xNg=="/>
+      <resource id="/instances/{}/providers/foundationallm.vectorization/vectorizationrequests/{}" version="2024-02-16" swagger="fllm-plane/fllm/ResourceProviders/FoundationaLLM.Agent/Paths/L2luc3RhbmNlcy97aW5zdGFuY2VJZH0vcHJvdmlkZXJzL0ZvdW5kYXRpb25hTExNLlZlY3Rvcml6YXRpb24vdmVjdG9yaXphdGlvblJlcXVlc3RzL3tuYW1lfQ==/V/MjAyNC0wMi0xNg=="/>
       <argGroup name="">
         <arg type="string" var="$Path.instanceId" options="instance-id" required="True"/>
         <arg type="string" var="$Path.name" options="name" required="True"/>
       </argGroup>
-      <operation operationId="vectorizationrequests_Delete">
-        <http path="/instances/{instanceId}/providers/FoundationaLLM.Vectorization/vectorizationrequests/{name}">
+      <operation operationId="vectorizationRequests_Delete">
+        <http path="/instances/{instanceId}/providers/FoundationaLLM.Vectorization/vectorizationRequests/{name}">
           <request method="delete">
             <path>
               <param type="string" name="instanceId" arg="$Path.instanceId" required="True"/>
@@ -99,7 +104,7 @@
       </operation>
     </command>
     <command name="upsert" version="2024-02-16">
-      <resource id="/instances/{}/providers/foundationallm.vectorization/vectorizationrequests/{}" version="2024-02-16" swagger="fllm-plane/fllm/ResourceProviders/FoundationaLLM.Vectorization/Paths/L2luc3RhbmNlcy97aW5zdGFuY2VJZH0vcHJvdmlkZXJzL0ZvdW5kYXRpb25hTExNLlZlY3Rvcml6YXRpb24vdmVjdG9yaXphdGlvbnJlcXVlc3RzL3tuYW1lfQ==/V/MjAyNC0wMi0xNg=="/>
+      <resource id="/instances/{}/providers/foundationallm.vectorization/vectorizationrequests/{}" version="2024-02-16" swagger="fllm-plane/fllm/ResourceProviders/FoundationaLLM.Agent/Paths/L2luc3RhbmNlcy97aW5zdGFuY2VJZH0vcHJvdmlkZXJzL0ZvdW5kYXRpb25hTExNLlZlY3Rvcml6YXRpb24vdmVjdG9yaXphdGlvblJlcXVlc3RzL3tuYW1lfQ==/V/MjAyNC0wMi0xNg=="/>
       <argGroup name="">
         <arg type="string" var="$Path.instanceId" options="instance-id" required="True"/>
         <arg type="string" var="$Path.name" options="name" required="True"/>
@@ -107,15 +112,33 @@
           <blank value="{}"/>
           <help short="VectorizationRequest"/>
           <arg type="@VectorizationStep_create" var="$body.Item" options="item"/>
-          <arg type="string" var="$body.completed_steps" options="completed-steps"/>
+          <arg type="string" var="$body.completed_steps" options="completed-steps">
+            <help short="completed_steps"/>
+          </arg>
           <arg type="object" var="$body.content_identifier" options="content-identifier">
             <help short="ContentIdentifier"/>
-            <arg type="string" var="$body.content_identifier.canonical_id" options="canonical-id"/>
-            <arg type="string" var="$body.content_identifier.content_source_profile_name" options="content-source-profile-name"/>
-            <arg type="string" var="$body.content_identifier.multipart_id" options="multipart-id"/>
+            <arg type="string" var="$body.content_identifier.canonical_id" options="canonical-id">
+              <help short="canonical_id"/>
+            </arg>
+            <arg type="string" var="$body.content_identifier.content_source_profile_name" options="content-source-profile-name">
+              <help short="content_source_profile_name"/>
+            </arg>
+            <arg type="object" var="$body.content_identifier.metadata" options="metadata">
+              <help short="metadata"/>
+              <additionalProp>
+                <item type="string"/>
+              </additionalProp>
+            </arg>
+            <arg type="string" var="$body.content_identifier.multipart_id" options="multipart-id">
+              <help short="multipart_id"/>
+            </arg>
           </arg>
-          <arg type="string" var="$body.id" options="id"/>
-          <arg type="string" var="$body.object_id" options="object-id"/>
+          <arg type="string" var="$body.id" options="id">
+            <help short="id"/>
+          </arg>
+          <arg type="string" var="$body.object_id" options="object-id">
+            <help short="object_id"/>
+          </arg>
           <arg type="string" var="$body.processing_type" options="processing-type">
             <help short="VectorizationProcessingType"/>
             <enum>
@@ -123,11 +146,17 @@
               <item name="Synchronous" value="&quot;Synchronous&quot;"/>
             </enum>
           </arg>
-          <arg type="string" var="$body.remaining_steps" options="remaining-steps"/>
+          <arg type="string" var="$body.remaining_steps" options="remaining-steps">
+            <help short="remaining_steps"/>
+          </arg>
           <arg type="array<object>" var="$body.steps" options="steps">
+            <help short="steps"/>
             <item type="object" cls="VectorizationStep_create">
-              <arg type="string" var="@VectorizationStep_create.id" options="id"/>
+              <arg type="string" var="@VectorizationStep_create.id" options="id">
+                <help short="id"/>
+              </arg>
               <arg type="object" var="@VectorizationStep_create.parameters" options="parameters">
+                <help short="parameters"/>
                 <additionalProp>
                   <item type="string"/>
                 </additionalProp>
@@ -136,8 +165,8 @@
           </arg>
         </arg>
       </argGroup>
-      <operation operationId="vectorizationrequests_Upsert">
-        <http path="/instances/{instanceId}/providers/FoundationaLLM.Vectorization/vectorizationrequests/{name}">
+      <operation operationId="vectorizationRequests_Upsert">
+        <http path="/instances/{instanceId}/providers/FoundationaLLM.Vectorization/vectorizationRequests/{name}">
           <request method="post">
             <path>
               <param type="string" name="instanceId" arg="$Path.instanceId" required="True"/>
@@ -156,6 +185,11 @@
                   <prop type="object" name="content_identifier" arg="$body.content_identifier">
                     <prop type="string" name="canonical_id" arg="$body.content_identifier.canonical_id"/>
                     <prop type="string" name="content_source_profile_name" arg="$body.content_identifier.content_source_profile_name"/>
+                    <prop type="object" name="metadata" arg="$body.content_identifier.metadata">
+                      <additionalProp>
+                        <item type="string"/>
+                      </additionalProp>
+                    </prop>
                     <prop type="string" name="multipart_id" arg="$body.content_identifier.multipart_id"/>
                   </prop>
                   <prop type="string" name="id" arg="$body.id"/>
